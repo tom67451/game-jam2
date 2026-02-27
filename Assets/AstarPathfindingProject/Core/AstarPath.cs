@@ -829,13 +829,14 @@ public class AstarPath : VersionedMonoBehaviour {
 		if (logPathResults != PathLog.None && (path.error || logPathResults != PathLog.OnlyErrors)) {
 			string debug = (path as IPathInternals).DebugString(logPathResults);
 
-			if (logPathResults == PathLog.InGame) {
+			/*if (logPathResults == PathLog.InGame) {
 				inGameDebugPath = debug;
 			} else if (path.error) {
 				Debug.LogWarning(debug);
 			} else {
 				Debug.Log(debug);
 			}
+			*/
 		}
 	}
 
