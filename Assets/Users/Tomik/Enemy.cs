@@ -20,20 +20,7 @@ public class Enemy : MonoBehaviour
     public Player playerScript;
     public GameObject enemy;
 
-    void Update()
-    {
-        enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, player.transform.position, movementSpeed * Time.deltaTime);
-        float distanceToPlayer = Vector3.Distance(enemy.transform.position, player.transform.position);
-        if (distanceToPlayer <= attackRange)
-        {
-            AttackPlayer();
-        }
-    }
-    public void FindPlayer()
-    {
-    
-    }
-    public void AttackPlayer()
+        public void AttackPlayer()
     {
         if (enemy.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
