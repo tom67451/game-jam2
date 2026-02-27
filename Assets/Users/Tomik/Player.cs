@@ -1,8 +1,8 @@
 using UnityEngine;
 
 public class Player : MonoBehaviour
-{   
-    public Sprite playerSprite;
+{
+    public GameObject player;
     [Header("Levels")]
     public int level = 1; 
     public float xp = 0f;
@@ -22,5 +22,11 @@ public class Player : MonoBehaviour
     public float magnetStrength = 10f;
     public float knockbackForce = 5f;
 
-
+    private void Update()
+    {
+        if (hp <= 0)
+        {
+            Destroy(player);
+        }
+    }
 }

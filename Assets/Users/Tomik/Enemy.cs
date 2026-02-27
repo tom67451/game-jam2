@@ -19,10 +19,10 @@ public class Enemy : MonoBehaviour
 
     public GameObject player;
     public Player playerScript;
-    public GameObject enemy;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Enemy hit!");
+        playerScript.hp -= damage;
     }
 }
