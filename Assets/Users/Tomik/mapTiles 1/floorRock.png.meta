@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 96af147005216504bb8b4ff6c31e02b8
+guid: e8b38013b91d99146a66e8d83f575052
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8939009169599571037
-    second: wallRockWithFloorRock_0
+      213: 146234447551684209
+    second: floorRock_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,7 +126,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wallRockWithFloorRock_0
+      name: floorRock_0
       rect:
         serializedVersion: 2
         x: 0
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3abde0a658242f380800000000000000
-      internalID: -8939009169599571037
+      spriteID: 17e5e3c8477870200800000000000000
+      internalID: 146234447551684209
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      wallRockWithFloorRock_0: -8939009169599571037
+      floorRock_0: 146234447551684209
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
