@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {   
-
+    public Sprite playerSprite;
     [Header("Levels")]
     public int level = 1; 
     public float xp = 0f;
