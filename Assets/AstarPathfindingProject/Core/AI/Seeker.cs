@@ -497,8 +497,8 @@ namespace Pathfinding {
 
 		protected override int OnUpgradeSerializedData (int version, bool unityThread) {
 			if (graphMaskCompatibility != -1) {
-				Debug.Log("Loaded " + graphMaskCompatibility + " " + graphMask.value);
-				graphMask = graphMaskCompatibility;
+                Debug.Log("Loaded " + graphMaskCompatibility + " " + graphMask.value);
+                graphMask = graphMaskCompatibility;
 				graphMaskCompatibility = -1;
 			}
 			return base.OnUpgradeSerializedData(version, unityThread);

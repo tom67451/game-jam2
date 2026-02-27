@@ -4,10 +4,11 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public enum EnemyType
-{
-    Basic,
-    Boss
-}
+    {
+        Basic,
+        Boss
+    }
+
     [Header("Enemy Settings")]
     public EnemyType enemyType;
     public float hp = 50f;
@@ -18,19 +19,10 @@ public class Enemy : MonoBehaviour
 
     public GameObject player;
     public Player playerScript;
-    public GameObject enemy;
 
-        public void AttackPlayer()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (enemy.gameObject.layer == LayerMask.NameToLayer("Player"))
-        {
-            playerScript.hp -= damage;
-            if (playerScript.hp <= 0)
-            {
-                // playerScript.Die();
-            }
-        }
+        Debug.Log("Enemy hit!");
+        playerScript.hp -= damage;
     }
-
-
 }
