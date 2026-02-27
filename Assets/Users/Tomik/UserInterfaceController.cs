@@ -37,6 +37,5 @@ public class MainMenuController : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
-    //
 
 }
