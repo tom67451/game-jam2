@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
     {   
         
         if (hp <= 0)
-        {
+        {   
             Destroy(gameObject);
         }
 
