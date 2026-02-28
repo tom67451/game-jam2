@@ -47,7 +47,8 @@ public class Player : MonoBehaviour
     private int rng2;
     public int choiceTop = 3;
     private void Update()
-    {
+    {   
+        
         if (hp <= 0)
         {
             Destroy(gameObject);
@@ -163,4 +164,5 @@ public class Player : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
     }
+    
 }
