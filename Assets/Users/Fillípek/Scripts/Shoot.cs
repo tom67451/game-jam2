@@ -31,17 +31,5 @@ public class Shoot : MonoBehaviour
 
             spit.GetComponent<Rigidbody2D>().linearVelocity = direction.normalized * 10f;
         }
-
-
-    }
-
-    private void Spit()
-    {
-        
-    }
-
-    private void onFire(InputValue inputValue)
-    {
-
     }
 }
