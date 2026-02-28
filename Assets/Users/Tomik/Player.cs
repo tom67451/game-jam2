@@ -1,6 +1,20 @@
+using System.Net.Http.Headers;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
+
+[System.Serializable]
+public class Upgrades
+{
+    public string nadpis;
+    public string popis;
+    public Sprite image;
+    public float damage;
+    public float speed;
+    public float health;
+    public float regen;
+}
 
 public class Player : MonoBehaviour
 {
@@ -17,7 +31,7 @@ public class Player : MonoBehaviour
     [Header("Health")]
     public float hp = 100f;
     public float maxHp = 100f;
-    public float regenerationRate = 5f;
+    public float regenerationRate = 0f;
     public bool invincible = false; 
 
     [Header("Special abilites")]
@@ -36,19 +50,30 @@ public class Player : MonoBehaviour
     public TextMeshProUGUI Option2Name;
     public TextMeshProUGUI Option2Text;
     public Image Option2Image;
-    
 
-    public Sprite Image1;
-    public Sprite Image2;
-    public Sprite Image3;
+    [SerializeField] public Upgrades[] upgrades;
 
     private bool isPaused;
     private int rng;
     private int rng2;
     public int choiceTop = 3;
     public Shoot Shoot;
+
+    public float clocker;
+    private void Start()
+    {
+        choiceTop = upgrades.Length;
+    }
     private void Update()
     {
+        clocker += Time.deltaTime;
+
+        if (clocker >= 1 && hp < maxHp)
+        {
+            hp += regenerationRate;
+            clocker = 0;
+        }
+
         if (hp <= 0)
         {   
             Destroy(gameObject);
@@ -65,91 +90,51 @@ public class Player : MonoBehaviour
             {
                 rng2 = Random.Range(0, choiceTop);
             }
-
+            xp -= xpToNextLevel;
             level++;
             xpToNextLevel = xpToNextLevel * xpGrowthRate;
             totalxp += xp;
-            xp = 0;
-
-            #region Different options
-
-            #region Option 1 ifs
-            if (rng == 0)
-            {
-                Option1Name.text = "Blob of attacker";
-                Option1Text.text = "Increases damage";
-                Option1Image.sprite = Image1;
-            }
-            else if (rng == 1)
-            {
-                Option1Name.text = "Blob of health";
-                Option1Text.text = "Increases maximum health";
-                Option1Image.sprite = Image2;
-            }
-            else if (rng == 2)
-            {
-                Option1Name.text = "Blob of speed";
-                Option1Text.text = "Increases speed";
-                Option1Image.sprite = Image3;
-            }
-            #endregion
-
-            #region option 2 ifs
-            if (rng2 == 0)
-            {
-                Option2Name.text = "Blob of attacker";
-                Option2Text.text = "Increases damage";
-                Option2Image.sprite = Image1;
-            }
-            else if (rng2 == 1)
-            {
-                Option2Name.text = "Blob of health";
-                Option2Text.text = "Increases health";
-                Option2Image.sprite = Image2;
-            }
-            else if (rng2 == 2)
-            {
-                Option2Name.text = "Blob of speed";
-                Option2Text.text = "Increases speed";
-                Option2Image.sprite = Image3;
-            }
-            #endregion
-            #endregion
         }
+
+        Option1Name.text = upgrades[rng].nadpis;
+        Option1Text.text = upgrades[rng].popis;
+        Option1Image.sprite = upgrades[rng].image;
+
+        Option2Name.text = upgrades[rng2].nadpis;
+        Option2Text.text = upgrades[rng2].popis;
+        Option2Image.sprite = upgrades[rng2].image;
+    }
+
+    private static Player instance;
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     public void Option1Click()
     {
-        if (rng == 0)
-        {
-            Shoot.damage += 5;
-        }
-        else if (rng == 1)
-        {
-            maxHp += 20;
-        }
-        else if (rng == 2)
-        {
-            movementSpeed += 1;
-        }
+        Shoot.damage += upgrades[rng].damage;
+        maxHp += upgrades[rng].health;
+        movementSpeed += upgrades[rng].speed;
+        regenerationRate += upgrades[rng].regen;
         lvlUI.SetActive(false);
         ResumeGame();
     }
 
     public void Option2Click()
     {
-        if (rng2 == 0)
-        {
-            Shoot.damage += 5;
-        }
-        else if (rng2 == 1)
-        {
-            maxHp += 20;
-        }
-        else if (rng2 == 2)
-        {
-            movementSpeed += 1;
-        }
+        Shoot.damage += upgrades[rng2].damage;
+        maxHp += upgrades[rng2].health;
+        movementSpeed += upgrades[rng2].speed;
+        regenerationRate += upgrades[rng2].regen;
         lvlUI.SetActive(false);
         ResumeGame();
     }

@@ -16,9 +16,10 @@ public class Xporbbehaviour : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             player.xp += xp_value;
+            Debug.Log("Orb collected");
+            Destroy(gameObject);
         }
-        Debug.Log("Orb collected");
-        Destroy(gameObject);
+        
         
     }
 }
