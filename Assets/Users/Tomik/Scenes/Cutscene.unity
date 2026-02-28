@@ -343,7 +343,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 1
+  m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -402,7 +402,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1930954608}
   - component: {fileID: 1930954610}
-  - component: {fileID: 1930954609}
+  - component: {fileID: 1930954611}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -429,7 +429,15 @@ RectTransform:
   m_AnchoredPosition: {x: -200, y: 0}
   m_SizeDelta: {x: 1158.5, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1930954609
+--- !u!222 &1930954610
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930954607}
+  m_CullTransparentMesh: 1
+--- !u!114 &1930954611
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -476,8 +484,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -521,14 +529,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1930954610
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1930954607}
-  m_CullTransparentMesh: 1
 --- !u!1 &2058667970
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,7 +656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6268d6d9f6170514fa7d3f848b5a1c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
-  textComponent: {fileID: 1930954609}
+  textComponent: {fileID: 1930954611}
   portraitImage: {fileID: 2058667972}
   portraits:
   - {fileID: -230358586290164950, guid: a9d7ede99cc6d2a4981a74212ada246e, type: 3}

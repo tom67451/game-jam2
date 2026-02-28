@@ -13,6 +13,7 @@ public class IntroCutscenePlayer : MonoBehaviour
     private int index;
 
     public Animator animator;
+    public GameObject dialogue_box;
 
     public int line_count;
 
@@ -25,10 +26,22 @@ public class IntroCutscenePlayer : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.KeypadEnter));
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.KeypadEnter))
         {
             NextLine();
             line_count++;
+        }
+
+        if (line_count == 2)
+        {
+            animator.SetBool("Show picture", true);
+            dialogue_box.SetActive(false);
+        }
+
+        if (line_count == 3)
+        {
+            animator.SetBool("Show picture", false);
+            animator.SetBool("Hide picture", true);
         }
     }
     void StartDialogue()
@@ -50,10 +63,7 @@ public class IntroCutscenePlayer : MonoBehaviour
     {
         if (index < lines.Length - 1)
         {
-            if (line_count == 2)
-            {
-                animator.SetBool("Show picture", true);
-            }
+            
             index++;
             textComponent.text = string.Empty;
             UpdatePortrait();
