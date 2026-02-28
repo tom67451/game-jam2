@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public Player player;
     public enum EnemyType
     {
         Basic,
@@ -18,14 +19,19 @@ public class Enemy : MonoBehaviour
     public float attackRange = 1f;
     public float attackCooldown = 2f;
 
-    public GameObject player;
     public GameObject xp_orb;
-    public Player playerScript;
+    public GameObject playerObj;
+
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        playerObj = GameObject.FindGameObjectWithTag("Player");
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Enemy hit!");
-        playerScript.hp -= damage;
+        player.hp -= damage;
     }
 
     private void Update()
