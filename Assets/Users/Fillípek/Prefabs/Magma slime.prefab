@@ -83,7 +83,7 @@ MonoBehaviour:
   radius: 0.5
   height: 2
   canMove: 1
-  maxSpeed: 2
+  maxSpeed: 1.9
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -269,8 +269,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   player: {fileID: 0}
   enemyType: 0
-  hp: 50
-  damage: 10
+  hp: 45
+  damage: 7
   movementSpeed: 2.5
   attackRange: 1
   attackCooldown: 2

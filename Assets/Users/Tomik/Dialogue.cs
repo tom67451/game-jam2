@@ -21,7 +21,7 @@ public class Dialogue : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.KeypadEnter));
         {
             NextLine();
         }
@@ -31,6 +31,7 @@ public class Dialogue : MonoBehaviour
         index = 0;
         StartCoroutine(TypeLine());
     }
+
     System.Collections.IEnumerator TypeLine()
     {
         foreach (char c in lines[index].ToCharArray())
