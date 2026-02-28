@@ -1,16 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
 public class Shoot : MonoBehaviour
 {
     public GameObject spit;
     public float speed;
     public GameObject player;
-
-    void Start()
-    {
-        
-    }
+    public static float damage = 10f;
 
     void Update()
     {
@@ -28,8 +25,6 @@ public class Shoot : MonoBehaviour
             GameObject proj = Instantiate(spit,player.transform.position,Quaternion.Euler(0, 0, angle));
 
             proj.GetComponent<Rigidbody2D>().linearVelocity = direction * speed;
-
-            spit.GetComponent<Rigidbody2D>().linearVelocity = direction.normalized * 10f;
         }
     }
 }
