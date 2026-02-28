@@ -1,0 +1,47 @@
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class Shoot : MonoBehaviour
+{
+    public GameObject spit;
+    public float speed;
+    public GameObject player;
+
+    void Start()
+    {
+        
+    }
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector3 clickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            clickPos.z = 0;
+
+
+            float angle = Mathf.Atan2(clickPos.y, clickPos.x) * Mathf.Rad2Deg;
+
+
+            Vector3 direction = (clickPos - player.transform.position).normalized;
+
+            GameObject proj = Instantiate(spit,player.transform.position,Quaternion.Euler(0, 0, angle));
+
+            proj.GetComponent<Rigidbody2D>().linearVelocity = direction * speed;
+
+            spit.GetComponent<Rigidbody2D>().linearVelocity = direction.normalized * 10f;
+        }
+
+
+    }
+
+    private void Spit()
+    {
+        
+    }
+
+    private void onFire(InputValue inputValue)
+    {
+
+    }
+}
