@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public GameObject player;
     [Header("Levels")]
     public int level = 1; 
     public float xp = 0f;
     public float xpToNextLevel = 100f;
     public float xpGrowthRate = 1.5f;
+    public float totalxp = 0f;
 
     [Header("Movement")]
     public float movementSpeed = 2f;
@@ -26,7 +26,15 @@ public class Player : MonoBehaviour
     {
         if (hp <= 0)
         {
-            Destroy(player);
+            Destroy(gameObject);
+        }
+
+        if (xp >= xpToNextLevel)
+        {
+            level++;
+            xpToNextLevel = xpToNextLevel * xpGrowthRate;
+            totalxp += xp;
+            xp = 0;
         }
     }
 }
