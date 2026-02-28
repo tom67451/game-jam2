@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float MoveSpeed = 15f;
+    private float MoveSpeed = Player.movementSpeed;
 
     private Vector2 movement;
 
@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        MoveSpeed = Player.movementSpeed;
         movement.Set(Inputmanager.Movement.x, Inputmanager.Movement.y);
 
         rb.linearVelocity = movement * MoveSpeed;
