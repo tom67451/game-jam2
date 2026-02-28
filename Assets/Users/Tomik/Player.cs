@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
             else if (rng == 1)
             {
                 Option1Name.text = "Blob of health";
-                Option1Text.text = "Increases health";
+                Option1Text.text = "Increases maximum health";
                 Option1Image.sprite = Image2;
             }
             else if (rng == 2)
