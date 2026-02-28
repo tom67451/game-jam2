@@ -11,6 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: 69dcaf270560e014da55ce2770af736a
+  - enabled: 1
+    path: Assets/Users/Tomik/Scenes/Floor_0.unity
+    guid: 972f0fe4d062bf94f97c4fc9b40a6513
+  - enabled: 1
+    path: Assets/Users/Tomik/Scenes/Floor_1.unity
+    guid: 273741440f9ef0c459915df86c53cf10
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

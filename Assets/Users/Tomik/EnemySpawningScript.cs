@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -7,6 +8,7 @@ public class Wave {
     public int enemyCount;
     public float spawnInterval;
     public GameObject[] enemies;
+    public bool isLastWaveOnFloor;
 }
 public class EnemySpawningScript : MonoBehaviour
 {   [SerializeField] private Wave[] waves; 
@@ -14,11 +16,16 @@ public class EnemySpawningScript : MonoBehaviour
     [SerializeField] private float spawnDistance = 2f;
     [SerializeField] private bool canSpawn = true;
 
+    public FloorSwitcher floorSwitcher;
+    private GameObject player;
+
     private int currentWaveIndex = 0;
     private int enemiesRemainingToSpawn;
     public int enemiesCurrentlyAlive; // Changed to public so enemies can reach it
 
     private void Start() {
+        floorSwitcher = Object.FindFirstObjectByType<FloorSwitcher>();
+        UpdateTilemapReferences();
         if (waves.Length > 0) {
             StartCoroutine(SpawnWaveRoutine());
         }
@@ -43,6 +50,15 @@ public class EnemySpawningScript : MonoBehaviour
             }
 
             Debug.Log("Wave Complete!");
+            if (currentWave.isLastWaveOnFloor) {
+                Debug.Log("Switching Floor...");
+                floorSwitcher.SwitchToFloor(currentWaveIndex + 1);
+                player.transform.position = Vector3.zero;
+                spawnableTilemap.ClearAllTiles(); // Clear old floor's spawn points
+                yield return new WaitForSeconds(0.1f);
+                UpdateTilemapReferences();
+            }
+
             currentWaveIndex++;
             yield return new WaitForSeconds(5f); // Rest time between waves
         }
@@ -83,6 +99,15 @@ public class EnemySpawningScript : MonoBehaviour
             0f
         );
     }  
+    private void UpdateTilemapReferences()
+    {
+        GameObject baseMapObj = GameObject.Find("Base"); // Matches your hierarchy name
+    if (baseMapObj != null) {
+        spawnableTilemap = baseMapObj.GetComponent<Tilemap>();
+    } else {
+        Debug.LogError("Spawner couldn't find a GameObject named 'Base'!");
+    }
+    }
      /*
     [SerializeField] private Wave[] waves; 
     [SerializeField] private Tilemap spawnableTilemap;
