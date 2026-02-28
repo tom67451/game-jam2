@@ -34,7 +34,7 @@ public class EnemySpawningScript : MonoBehaviour
             
             int randomIndex = Random.Range(0, enemyPrefabs.Length);
             Instantiate(enemyPrefabs[randomIndex], spawnPos, Quaternion.identity);
-            //
+            
 
             
         }
