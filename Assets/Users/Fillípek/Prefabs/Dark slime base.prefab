@@ -274,6 +274,7 @@ MonoBehaviour:
   attackRange: 1
   attackCooldown: 2
   player: {fileID: 0}
+  xp_orb: {fileID: 4002872362095769937, guid: 8bedba17253fb6f4fbdd3b6a6e439d74, type: 3}
   playerScript: {fileID: 0}
 --- !u!95 &4177189512365738235
 Animator:

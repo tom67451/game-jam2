@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -18,11 +19,22 @@ public class Enemy : MonoBehaviour
     public float attackCooldown = 2f;
 
     public GameObject player;
+    public GameObject xp_orb;
     public Player playerScript;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Enemy hit!");
         playerScript.hp -= damage;
+    }
+
+    private void Update()
+    {
+        if (hp <= 0f)
+        {
+            Debug.Log("Enemy died", gameObject.transform);
+            Instantiate(xp_orb, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y), Quaternion.identity);
+            Destroy(gameObject);
+        }
     }
 }
