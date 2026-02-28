@@ -21,10 +21,12 @@ public class Enemy : MonoBehaviour
 
     public GameObject xp_orb;
     public GameObject playerObj;
+    public EnemySpawningScript spawner;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        spawner = player.GetComponentInChildren<EnemySpawningScript>();
         playerObj = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -42,7 +44,7 @@ public class Enemy : MonoBehaviour
     {
         if (hp <= 0f)
         {
-            Debug.Log("Enemy died", gameObject.transform);
+            spawner.enemiesCurrentlyAlive--;
             Instantiate(xp_orb, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y), Quaternion.identity);
             Destroy(gameObject);
         }

@@ -108,6 +108,7 @@ public class EnemySpawningScript : MonoBehaviour
         Debug.LogError("Spawner couldn't find a GameObject named 'Base'!");
     }
     }
+
      /*
     [SerializeField] private Wave[] waves; 
     [SerializeField] private Tilemap spawnableTilemap;
