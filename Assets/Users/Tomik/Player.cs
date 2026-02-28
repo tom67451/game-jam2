@@ -46,9 +46,9 @@ public class Player : MonoBehaviour
     private int rng;
     private int rng2;
     public int choiceTop = 3;
+    public Shoot Shoot;
     private void Update()
-    {   
-        
+    {
         if (hp <= 0)
         {
             Destroy(gameObject);
@@ -122,7 +122,7 @@ public class Player : MonoBehaviour
     {
         if (rng == 0)
         {
-            Debug.Log("damage increased");
+            Shoot.damage += 5;
         }
         else if (rng == 1)
         {
@@ -140,7 +140,7 @@ public class Player : MonoBehaviour
     {
         if (rng2 == 0)
         {
-            Debug.Log("damage increased");
+            Shoot.damage += 5;
         }
         else if (rng2 == 1)
         {
@@ -148,7 +148,7 @@ public class Player : MonoBehaviour
         }
         else if (rng2 == 2)
         {
-            movementSpeed += 20;
+            movementSpeed += 1;
         }
         lvlUI.SetActive(false);
         ResumeGame();
@@ -164,5 +164,4 @@ public class Player : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
     }
-    
 }
