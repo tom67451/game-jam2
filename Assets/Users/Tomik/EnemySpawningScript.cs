@@ -77,7 +77,6 @@ public class EnemySpawningScript : MonoBehaviour
                 int randomIndex = Random.Range(0, wave.enemies.Length);
                 GameObject enemy = Instantiate(wave.enemies[randomIndex], spawnPos, Quaternion.identity);
                 
-                // Track life (Assuming your enemy has a way to tell us it died)
                 enemiesCurrentlyAlive++; 
                 spawned = true;
             } else {

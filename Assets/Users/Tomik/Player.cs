@@ -17,7 +17,8 @@ public class Upgrades
 }
 
 public class Player : MonoBehaviour
-{
+{   
+    
     [Header("Levels")]
     public int level = 1; 
     public float xp = 0f;
@@ -94,7 +95,7 @@ public class Player : MonoBehaviour
             level++;
             xpToNextLevel = xpToNextLevel * xpGrowthRate;
             totalxp += xp;
-        }
+        }    
 
         Option1Name.text = upgrades[rng].nadpis;
         Option1Text.text = upgrades[rng].popis;
