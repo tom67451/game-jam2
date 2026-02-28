@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 5884605207967024843}
   - component: {fileID: 4177189512365738235}
   m_Layer: 0
-  m_Name: Dark slime base
+  m_Name: Dark slime base v2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -170,7 +170,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -267,15 +267,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 908af08256463d7439b4ace30599fde0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  player: {fileID: 0}
   enemyType: 0
   hp: 50
   damage: 10
   movementSpeed: 1.5
   attackRange: 1
   attackCooldown: 2
-  player: {fileID: 0}
   xp_orb: {fileID: 4002872362095769937, guid: 8bedba17253fb6f4fbdd3b6a6e439d74, type: 3}
-  playerScript: {fileID: 0}
+  playerObj: {fileID: 0}
 --- !u!95 &4177189512365738235
 Animator:
   serializedVersion: 7
