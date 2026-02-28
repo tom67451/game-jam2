@@ -10,7 +10,7 @@ public class EnemySpawningScript : MonoBehaviour
     private void Start()
     {
         StartCoroutine(Spawner());
-        
+
        
     }
     private System.Collections.IEnumerator Spawner()
@@ -34,6 +34,7 @@ public class EnemySpawningScript : MonoBehaviour
             
             int randomIndex = Random.Range(0, enemyPrefabs.Length);
             Instantiate(enemyPrefabs[randomIndex], spawnPos, Quaternion.identity);
+            //
 
             
         }
