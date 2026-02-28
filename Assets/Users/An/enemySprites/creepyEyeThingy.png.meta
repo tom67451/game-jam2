@@ -140,12 +140,12 @@ TextureImporter:
       name: creepyEyeThingy_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 38
-        width: 15
-        height: 19
+        x: 0
+        y: 32
+        width: 16
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -162,12 +162,12 @@ TextureImporter:
       name: creepyEyeThingy_1
       rect:
         serializedVersion: 2
-        x: 17
-        y: 38
-        width: 15
-        height: 19
+        x: 16
+        y: 32
+        width: 16
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -184,12 +184,12 @@ TextureImporter:
       name: creepyEyeThingy_2
       rect:
         serializedVersion: 2
-        x: 33
-        y: 38
-        width: 15
-        height: 19
+        x: 32
+        y: 32
+        width: 16
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -206,12 +206,12 @@ TextureImporter:
       name: creepyEyeThingy_3
       rect:
         serializedVersion: 2
-        x: 49
-        y: 38
-        width: 15
-        height: 19
+        x: 48
+        y: 32
+        width: 16
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -229,11 +229,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 38
-        width: 15
-        height: 19
+        y: 32
+        width: 16
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -251,11 +251,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 6
-        width: 15
-        height: 19
+        y: 0
+        width: 16
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -272,12 +272,12 @@ TextureImporter:
       name: creepyEyeThingy_6
       rect:
         serializedVersion: 2
-        x: 17
-        y: 6
-        width: 15
-        height: 18
+        x: 16
+        y: 0
+        width: 16
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -294,12 +294,12 @@ TextureImporter:
       name: creepyEyeThingy_7
       rect:
         serializedVersion: 2
-        x: 33
-        y: 6
-        width: 15
-        height: 19
+        x: 32
+        y: 0
+        width: 16
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -316,12 +316,12 @@ TextureImporter:
       name: creepyEyeThingy_8
       rect:
         serializedVersion: 2
-        x: 47
-        y: 6
-        width: 33
-        height: 19
+        x: 48
+        y: 0
+        width: 16
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -334,11 +334,33 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: creepyEyeThingy_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 647a542c35c35ad479e2322ecc5eeb29
+      internalID: 108757914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9af4ff74198129047a0c197b66c84325
     internalID: 0
     vertices: []
     indices: 
@@ -346,7 +368,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       creepyEyeThingy_0: -3566465562474840835
       creepyEyeThingy_1: -6374487192215602726
@@ -357,6 +381,7 @@ TextureImporter:
       creepyEyeThingy_6: 5624954823951553945
       creepyEyeThingy_7: 6156548973219354397
       creepyEyeThingy_8: 4279287512963247288
+      creepyEyeThingy_9: 108757914
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,37 +1,10 @@
 fileFormatVersion: 2
-guid: 401fc108cf06cc0409309d42ac3a4e5d
+guid: d7e6db682526e5846bd9e7c18014bd36
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5013208981470550870
-    second: enemyShroom_0
-  - first:
-      213: 7672503920352087013
-    second: enemyShroom_1
-  - first:
-      213: 1024799279563616122
-    second: enemyShroom_2
-  - first:
-      213: 8916259605487695496
-    second: enemyShroom_3
-  - first:
-      213: 7104739271564218671
-    second: enemyShroom_4
-  - first:
-      213: -1822315571949147953
-    second: enemyShroom_5
-  - first:
-      213: -4960047222912634923
-    second: enemyShroom_6
-  - first:
-      213: -3480559982513089363
-    second: enemyShroom_7
-  - first:
-      213: 6176320323984352435
-    second: enemyShroom_8
-  - first:
-      213: -2224504061806364163
-    second: enemyShroom_9
+      213: 3356837773014537050
+    second: Untitled_Artwork (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +48,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 0
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
@@ -99,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 512
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -140,221 +113,177 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemyShroom_0
+      name: Picture fades_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
-        width: 16
-        height: 32
+        y: 180
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: aa466a21ef08d6ab0800000000000000
-      internalID: -5013208981470550870
+      spriteID: 04b853aa52f1428499ae0c9dc717ecb1
+      internalID: 410200228
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemyShroom_1
+      name: Picture fades_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 32
+        x: 320
+        y: 180
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5ebc0663aa53a7a60800000000000000
-      internalID: 7672503920352087013
+      spriteID: ae98bb7d6b9318d46bf13090f06b3214
+      internalID: 1868098629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemyShroom_2
+      name: Picture fades_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 32
+        x: 640
+        y: 180
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a7f2770e381d83e00800000000000000
-      internalID: 1024799279563616122
+      spriteID: ee839fefbf02f794da386653c624b3a1
+      internalID: 186093752
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemyShroom_3
+      name: Picture fades_3
       rect:
         serializedVersion: 2
-        x: 48
-        y: 32
-        width: 16
-        height: 32
+        x: 960
+        y: 180
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 886324eeedaecbb70800000000000000
-      internalID: 8916259605487695496
+      spriteID: a8e774d6dcc9bce4386c1d9ff234498b
+      internalID: -1498709329
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemyShroom_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f215a5799ba199260800000000000000
-      internalID: 7104739271564218671
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemyShroom_5
+      name: Picture fades_4
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 32
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: fc8ee4174a5d5b6e0800000000000000
-      internalID: -1822315571949147953
+      spriteID: 9a697a0a630ecec49bb6fc6fdd20be78
+      internalID: 861525051
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemyShroom_6
+      name: Picture fades_5
       rect:
         serializedVersion: 2
-        x: 16
+        x: 320
         y: 0
-        width: 16
-        height: 32
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5df2129845f5a2bb0800000000000000
-      internalID: -4960047222912634923
+      spriteID: 5f31ecdf668a89d44aa67c010904b349
+      internalID: -1023493293
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemyShroom_7
+      name: Picture fades_6
       rect:
         serializedVersion: 2
-        x: 32
+        x: 640
         y: 0
-        width: 16
-        height: 32
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: da41edef22192bfc0800000000000000
-      internalID: -3480559982513089363
+      spriteID: f7f113e523daacd4db76a7c9a81c9f95
+      internalID: 1971038138
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemyShroom_8
+      name: Picture fades_7
       rect:
         serializedVersion: 2
-        x: 48
+        x: 960
         y: 0
-        width: 16
-        height: 32
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3b4ec127c92b6b550800000000000000
-      internalID: 6176320323984352435
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemyShroom_9
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: df93e9a7759f021e0800000000000000
-      internalID: -2224504061806364163
+      spriteID: 816a9b304c3734b4b8f4c9b312b57095
+      internalID: -1900750790
       vertices: []
       indices: 
       edges: []
@@ -363,7 +292,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9ebe206f5031cb4419b3b76a38f8983b
+    spriteID: caf76e0ed7729e040ad1a5593e634ab7
     internalID: 0
     vertices: []
     indices: 
@@ -373,18 +302,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":320.0,"y":180.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      enemyShroom_0: -5013208981470550870
-      enemyShroom_1: 7672503920352087013
-      enemyShroom_2: 1024799279563616122
-      enemyShroom_3: 8916259605487695496
-      enemyShroom_4: 7104739271564218671
-      enemyShroom_5: -1822315571949147953
-      enemyShroom_6: -4960047222912634923
-      enemyShroom_7: -3480559982513089363
-      enemyShroom_8: 6176320323984352435
-      enemyShroom_9: -2224504061806364163
+      Picture fades_0: 410200228
+      Picture fades_1: 1868098629
+      Picture fades_2: 186093752
+      Picture fades_3: -1498709329
+      Picture fades_4: 861525051
+      Picture fades_5: -1023493293
+      Picture fades_6: 1971038138
+      Picture fades_7: -1900750790
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
