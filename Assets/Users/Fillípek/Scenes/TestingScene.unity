@@ -15098,7 +15098,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7666651883998209682, guid: 83f971964d1743145abe1934ad1c7d54, type: 3}
       propertyPath: waves.Array.data[1].enemies.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7666651883998209682, guid: 83f971964d1743145abe1934ad1c7d54, type: 3}
       propertyPath: 'waves.Array.data[0].enemies.Array.data[0]'
@@ -15108,6 +15108,10 @@ PrefabInstance:
       propertyPath: 'waves.Array.data[1].enemies.Array.data[0]'
       value: 
       objectReference: {fileID: 4548445315486222781, guid: 889bed891ceceae43b809ec6b0fcc7d8, type: 3}
+    - target: {fileID: 7666651883998209682, guid: 83f971964d1743145abe1934ad1c7d54, type: 3}
+      propertyPath: 'waves.Array.data[1].enemies.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2638973998870348263, guid: 15cd9385a163f4a419c476d2bc7fbd5c, type: 3}
     - target: {fileID: 8052451560347952504, guid: 83f971964d1743145abe1934ad1c7d54, type: 3}
       propertyPath: m_Name
       value: Player
