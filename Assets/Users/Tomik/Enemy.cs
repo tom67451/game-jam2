@@ -28,10 +28,14 @@ public class Enemy : MonoBehaviour
         playerObj = GameObject.FindGameObjectWithTag("Player");
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Enemy hit!");
-        player.hp -= damage;
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Enemy hit!");
+            player.hp -= damage;
+        }
+        
     }
 
     private void Update()

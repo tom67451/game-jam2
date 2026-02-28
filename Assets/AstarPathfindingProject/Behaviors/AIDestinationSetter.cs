@@ -17,7 +17,6 @@ namespace Pathfinding {
 		/// <summary>The object that the AI should move to</summary>
 		public Transform target;
 		IAstarAI ai;
-		public GameObject playerObj;
         
         void OnEnable () {
 			ai = GetComponent<IAstarAI>();
