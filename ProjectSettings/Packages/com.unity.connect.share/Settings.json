@@ -19,7 +19,7 @@
             {
                 "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "buildOutputDirList",
-                "value": "{\"m_Value\":\"C:/Users/tom/Documents/GitHub/game-jam2/WebGL Builds;;;;;;;;;\"}"
+                "value": "{\"m_Value\":\"C:/Users/admin/Unity projekty/game-jam2/WebGL Builds;C:/Users/tom/Documents/GitHub/game-jam2/WebGL Builds;;;;;;;;\"}"
             }
         ]
     }

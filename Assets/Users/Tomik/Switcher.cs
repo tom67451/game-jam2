@@ -8,6 +8,26 @@ public class Switcher : MonoBehaviour
     public static Switcher instance;
     public int currentFloorIndex = 0;
 
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        GameObject player = GameObject.FindWithTag("Player");
+        if (player != null)
+        {
+            player.transform.position = Vector3.zero;
+        }
+    }
+
     private void Awake() {
         if (instance == null) {
             instance = this;
