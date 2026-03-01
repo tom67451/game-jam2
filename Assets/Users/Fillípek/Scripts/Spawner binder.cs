@@ -3,7 +3,6 @@ using UnityEngine;
 public class Spawnerbinder : MonoBehaviour
 {
     public GameObject player;
-    public Animator animator;
 
     void Start()
     {
