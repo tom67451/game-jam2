@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7d6be6f563c0a694eb59a700d6521cc7
+guid: d4cc6131c7c37ec458e6bf2f68473377
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4024468218715433224
-    second: rock16x32_0
+      213: 2063826154672905881
+    second: black_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,6 +97,19 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
     buildTarget: WindowsStoreApps
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -113,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rock16x32_0
+      name: black_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 5
+        y: 0
         width: 16
-        height: 23
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 809e16ab588c9d730800000000000000
-      internalID: 4024468218715433224
+      spriteID: 99e507bf3fe24ac10800000000000000
+      internalID: 2063826154672905881
       vertices: []
       indices: 
       edges: []
@@ -148,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      rock16x32_0: 4024468218715433224
+      black_0: 2063826154672905881
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
