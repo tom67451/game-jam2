@@ -31,7 +31,7 @@ public class IntroCutscenePlayer : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.KeypadEnter) && pictureon == false)
+        if (Input.GetKeyDown(KeyCode.Space) && pictureon == false || Input.GetMouseButtonDown(0) && pictureon == false || Input.GetKeyDown(KeyCode.KeypadEnter) && pictureon == false)
         {
             NextLine();
             Debug.Log(line_count);
@@ -43,6 +43,12 @@ public class IntroCutscenePlayer : MonoBehaviour
             animator.SetBool("Show picture", false);
             animator.SetBool("Hide picture", true);
         }
+
+        if (animator.IsInTransition(5))
+        {
+            
+        }
+
 
         if (line_count == 21 && pictureon == false)
         {
