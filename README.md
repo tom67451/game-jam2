@@ -1,6 +1,6 @@
 # game-jam2
 
-...Slime is an down-top (top-down) adventure game where you fight monsters to get to the top. Along the way you level up and gain bufs to make the increasing difficulity managable.
+...Slime is an down-top (top-down) adventure game where you fight monsters to get to the top. Along the way you level up and gain buffs to make the increasing difficulity managable.
 
 Controls 
 W - Up
