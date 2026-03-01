@@ -426,7 +426,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -200, y: 0}
+  m_AnchoredPosition: {x: -200, y: -3}
   m_SizeDelta: {x: 1158.5, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1930954609
@@ -449,7 +449,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -662,14 +662,7 @@ MonoBehaviour:
   - {fileID: -230358586290164950, guid: a9d7ede99cc6d2a4981a74212ada246e, type: 3}
   - {fileID: -2690792559708188323, guid: 53ac5e03239578b47a823b2eabe00413, type: 3}
   lines:
-  - Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-    Ipsum has been the industry's standard dummy text ever since the 1500s, when
-    an unknown printer took a galley of type and scrambled it to make a type specimen
-    book. It has survived not only five centuries, but also the leap into electronic
-    typesetting, remaining essentially unchanged. It was popularised in the 1960s
-    with the release of Letraset sheets containing Lorem Ipsum passages, and more
-    recently with desktop publishing software like Aldus PageMaker including versions
-    of Lorem Ipsum.
+  - This is the first line
   - This is the second line
 --- !u!114 &2067597012
 MonoBehaviour:

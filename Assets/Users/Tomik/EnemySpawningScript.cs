@@ -21,7 +21,7 @@ public class EnemySpawningScript : MonoBehaviour
 
     private int currentWaveIndex = 0;
     private int enemiesRemainingToSpawn;
-    public int enemiesCurrentlyAlive; // Changed to public so enemies can reach it
+    public int enemiesCurrentlyAlive;
 
     private void Start() {
         floorSwitcher = Object.FindFirstObjectByType<FloorSwitcher>();
@@ -44,7 +44,6 @@ public class EnemySpawningScript : MonoBehaviour
                 yield return new WaitForSeconds(currentWave.spawnInterval);
             }
 
-            // Wait until the scene is clear of enemies
             while (enemiesCurrentlyAlive > 0) {
                 yield return new WaitForSeconds(1f);
             }
@@ -54,13 +53,13 @@ public class EnemySpawningScript : MonoBehaviour
                 Debug.Log("Switching Floor...");
                 floorSwitcher.SwitchToFloor(currentWaveIndex + 1);
                 player.transform.position = Vector3.zero;
-                spawnableTilemap.ClearAllTiles(); // Clear old floor's spawn points
+                spawnableTilemap.ClearAllTiles(); 
                 yield return new WaitForSeconds(0.1f);
                 UpdateTilemapReferences();
             }
 
             currentWaveIndex++;
-            yield return new WaitForSeconds(5f); // Rest time between waves
+            yield return new WaitForSeconds(5f);
         }
     }
 
@@ -100,7 +99,7 @@ public class EnemySpawningScript : MonoBehaviour
     }  
     private void UpdateTilemapReferences()
     {
-        GameObject baseMapObj = GameObject.Find("Base"); // Matches your hierarchy name
+        GameObject baseMapObj = GameObject.Find("Base");
     if (baseMapObj != null) {
         spawnableTilemap = baseMapObj.GetComponent<Tilemap>();
     } else {
