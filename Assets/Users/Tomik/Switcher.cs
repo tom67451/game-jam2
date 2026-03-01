@@ -29,6 +29,8 @@ public class Switcher : MonoBehaviour
     }
 
     private void Awake() {
+        Debug.Log("Switcher Awake, currentFloorIndex = " + currentFloorIndex);
+
         if (instance == null) {
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -45,6 +47,9 @@ public class Switcher : MonoBehaviour
 
     public void SwitchToFloor(int newFloorIndex) {
         string sceneName = "Floor_" + newFloorIndex;
+
+        Debug.Log("Switching to: " + sceneName);
+
 
         if (Application.CanStreamedLevelBeLoaded(sceneName)) {
             currentFloorIndex = newFloorIndex;
