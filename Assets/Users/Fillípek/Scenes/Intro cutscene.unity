@@ -249,7 +249,7 @@ MonoBehaviour:
   - oh.. you can't speak, can you?
   - ...
   - ...
-  - I guess it makes sense, after all you've never gone to school-
+  - Guess it makes sense, you've never gone to school-
   - or even seen one
   - ...
   - Hold on- have you ever even seen how it looks up there?
@@ -258,13 +258,15 @@ MonoBehaviour:
   - aren't you a bit sad down here sometimes?
   - ...
   - '.. '
-  - I just realized, that I can show you how it looks up there-
+  - Wait, I can show you how it looks up there-
   - here, take a look
   - ' '
   animator: {fileID: 2012176015}
   Dialogue_box: {fileID: 743906838}
   Switcher: {fileID: 1279119616}
   line_count: 0
+  clocker: 0
+  clockbool: 0
 --- !u!223 &506054870
 Canvas:
   m_ObjectHideFlags: 0
@@ -474,8 +476,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b99a485defb07747a53fe70436e99e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Switcher
-  transition: {fileID: 0}
-  transitionTime: 1
 --- !u!4 &1279119617
 Transform:
   m_ObjectHideFlags: 0
@@ -662,7 +662,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 859, y: 0.0024114}
+  m_AnchoredPosition: {x: 772, y: 0.0024114}
   m_SizeDelta: {x: 100, y: 105.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1525543253
