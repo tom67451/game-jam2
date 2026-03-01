@@ -18,9 +18,13 @@ public class IntroCutscenePlayer : MonoBehaviour
 
 
     public Animator animator;
-    public GameObject dialogue_box;
+    public GameObject Dialogue_box;
+    [SerializeField] private Switcher Switcher;
 
     public int line_count;
+
+    public float clocker;
+    public bool clockbool = false;
 
     void Start()
     {
@@ -31,6 +35,12 @@ public class IntroCutscenePlayer : MonoBehaviour
     }
     void Update()
     {
+        if (clockbool)
+        {
+            clocker += Time.deltaTime;
+        }
+        
+
         if (Input.GetKeyDown(KeyCode.Space) && pictureon == false || Input.GetMouseButtonDown(0) && pictureon == false || Input.GetKeyDown(KeyCode.KeypadEnter) && pictureon == false)
         {
             NextLine();
@@ -42,18 +52,19 @@ public class IntroCutscenePlayer : MonoBehaviour
             Debug.Log("Hide pic");
             animator.SetBool("Show picture", false);
             animator.SetBool("Hide picture", true);
+            clockbool = true;
         }
 
-        if (animator.IsInTransition(5))
+        if (clocker >= 2.9f)
         {
-            
+            Switcher.SwitchToFloor(0);
+            animator.speed = 0;
         }
-
 
         if (line_count == 21 && pictureon == false)
         {
             animator.SetBool("Show picture", true);
-            dialogue_box.SetActive(false);
+            Dialogue_box.SetActive(false);
             pictureon = true;
         }
     }
@@ -77,6 +88,16 @@ public class IntroCutscenePlayer : MonoBehaviour
 
         isTyping = false;
     }
+
+    System.Collections.IEnumerator PlayAndWait(string anim)
+    {
+        animator.Play(anim);
+
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+
+        Debug.Log("Konec animace");
+    }
+
 
 
     public void NextLine()
