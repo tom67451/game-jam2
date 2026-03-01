@@ -23,10 +23,14 @@ public class EnemySpawningScript : MonoBehaviour
     private int currentWaveIndex = 0;
     private int enemiesRemainingToSpawn;
     public int enemiesCurrentlyAlive;
+    
 
     private void Start() {
         floorSwitcher = Object.FindFirstObjectByType<Switcher>();
         UpdateTilemapReferences();
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Floor_0") {
+                    enemiesCurrentlyAlive++;
+                }
         if (waves.Length > 0) {
             StartCoroutine(SpawnWaveRoutine());
         }

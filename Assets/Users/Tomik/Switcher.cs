@@ -6,18 +6,7 @@ using System.Collections;
 public class Switcher : MonoBehaviour
 {
     public static Switcher instance;
-    public Animator transition;
-    public float transitionTime = 1f;
     private int currentFloorIndex = 0;
-
-    void Awake() {
-        if (instance == null) {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        } else {
-            Destroy(gameObject);
-        }
-    }
 
     void Update() {
         if (Input.GetKeyDown(KeyCode.L)) {
