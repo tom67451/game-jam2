@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
     void Start()
     { 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        spawner = player.GetComponentInChildren<EnemySpawningScript>();
+        spawner = FindAnyObjectByType<EnemySpawningScript>();
         playerObj = GameObject.FindGameObjectWithTag("Player");
     }
 

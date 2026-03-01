@@ -26,6 +26,7 @@ public class EnemySpawningScript : MonoBehaviour
     
 
     private void Start() {
+        animator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         floorSwitcher = Object.FindFirstObjectByType<Switcher>();
         UpdateTilemapReferences();
         if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Floor_0") {
