@@ -8,6 +8,15 @@ public class Switcher : MonoBehaviour
     public static Switcher instance;
     private int currentFloorIndex = 0;
 
+    private void Awake() {
+        if (instance == null) {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        } else {
+            Destroy(gameObject);
+        }
+    }
+
     void Update() {
         if (Input.GetKeyDown(KeyCode.L)) {
             SwitchToFloor(currentFloorIndex + 1);
