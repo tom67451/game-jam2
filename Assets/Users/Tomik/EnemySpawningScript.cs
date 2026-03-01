@@ -63,7 +63,7 @@ public class EnemySpawningScript : MonoBehaviour
                 animator.SetBool("Ascend", false);
                 Debug.Log("Switching Floor...");
                 floorSwitcher.SwitchToFloor(currentWaveIndex + 1);
-                player.transform.position = Vector3.zero;
+                player.transform.position = Vector2.zero;
                 spawnableTilemap.ClearAllTiles(); 
                 UpdateTilemapReferences();
             }
