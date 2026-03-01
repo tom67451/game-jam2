@@ -18,6 +18,7 @@ public class EnemySpawningScript : MonoBehaviour
 
     public Switcher floorSwitcher;
     private GameObject player;
+    [SerializeField] Animator animator;
 
     private int currentWaveIndex = 0;
     private int enemiesRemainingToSpawn;
@@ -35,7 +36,7 @@ public class EnemySpawningScript : MonoBehaviour
         while (currentWaveIndex < waves.Length && canSpawn) {
             Wave currentWave = waves[currentWaveIndex];
             enemiesRemainingToSpawn = currentWave.enemyCount;
-
+            
             Debug.Log("Starting Wave: " + currentWave.waveName);
 
             while (enemiesRemainingToSpawn > 0) {
@@ -49,12 +50,16 @@ public class EnemySpawningScript : MonoBehaviour
             }
 
             Debug.Log("Wave Complete!");
-            if (currentWave.isLastWaveOnFloor) {
+            if (currentWave.isLastWaveOnFloor) 
+            {
+                animator.SetBool("Ascend", true);
+                WaitForAnim("Ascension");
+                yield return new WaitForSeconds(1f);
+                animator.SetBool("Ascend", false);
                 Debug.Log("Switching Floor...");
                 floorSwitcher.SwitchToFloor(currentWaveIndex + 1);
                 player.transform.position = Vector3.zero;
                 spawnableTilemap.ClearAllTiles(); 
-                yield return new WaitForSeconds(0.1f);
                 UpdateTilemapReferences();
             }
 
@@ -105,6 +110,14 @@ public class EnemySpawningScript : MonoBehaviour
     } else {
         Debug.LogError("Spawner couldn't find a GameObject named 'Base'!");
     }
+    }
+
+    System.Collections.IEnumerator WaitForAnim(string animationName)
+    {
+        animator.Play(animationName);
+        float anim_length = animator.GetCurrentAnimatorStateInfo(0).length;
+
+        yield return new WaitForSeconds(anim_length);
     }
 
      /*

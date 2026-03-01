@@ -60,7 +60,6 @@ public class Player : MonoBehaviour
     private int rng2;
     public int choiceTop = 3;
     public Shoot Shoot;
-    public TextMeshProUGUI hptext;
 
     public float clocker;
     private void Start()
@@ -69,7 +68,6 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
-        hptext.text = hp.ToString();
         clocker += Time.deltaTime;
 
         if (clocker >= 1 && hp < maxHp)
