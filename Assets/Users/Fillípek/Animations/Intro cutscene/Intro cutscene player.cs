@@ -44,7 +44,7 @@ public class IntroCutscenePlayer : MonoBehaviour
             animator.SetBool("Hide picture", true);
         }
 
-        if (line_count == 21)
+        if (line_count == 21 && pictureon == false)
         {
             animator.SetBool("Show picture", true);
             dialogue_box.SetActive(false);
