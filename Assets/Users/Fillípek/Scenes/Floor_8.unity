@@ -202,6 +202,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9013122647857516195, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: f78039da1acdf5247a8178167cbf53e0, type: 3}
+    - target: {fileID: -9013122647857516195, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3869666224139759793, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3869666224139759793, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3026152675508667096, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.0743916

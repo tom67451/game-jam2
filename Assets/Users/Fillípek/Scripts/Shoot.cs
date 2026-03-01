@@ -8,11 +8,18 @@ public class Shoot : MonoBehaviour
     public float speed;
     public GameObject player;
     public static float damage = 10f;
+    public AudioSource spitsound;
+
+    private void Start()
+    {
+        spitsound = player.GetComponent<AudioSource>();
+    }
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
+            spitsound.Play();
             Vector3 clickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             clickPos.z = 0;
 
