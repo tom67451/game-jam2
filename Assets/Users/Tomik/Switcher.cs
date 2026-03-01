@@ -6,7 +6,7 @@ using System.Collections;
 public class Switcher : MonoBehaviour
 {
     public static Switcher instance;
-    private int currentFloorIndex = 0;
+    public int currentFloorIndex = 0;
 
     private void Awake() {
         if (instance == null) {

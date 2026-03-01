@@ -60,11 +60,13 @@ public class Player : MonoBehaviour
     private int rng2;
     public int choiceTop = 3;
     public Shoot Shoot;
+    public Switcher switcher;
 
     public float clocker;
     private void Start()
     {
         choiceTop = upgrades.Length;
+        switcher = GameObject.FindGameObjectWithTag("Switcher").GetComponent<Switcher>();
     }
     private void Update()
     {
@@ -77,8 +79,9 @@ public class Player : MonoBehaviour
         }
 
         if (hp <= 0)
-        {   
-            Destroy(gameObject);
+        {
+            switcher.SwitchToScene("Floor_0");
+            switcher.currentFloorIndex = 0;
         }
 
         if (xp >= xpToNextLevel)
