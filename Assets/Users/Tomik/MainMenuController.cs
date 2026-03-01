@@ -6,7 +6,7 @@ public class UserInterfaceController : MonoBehaviour
     [SerializeField] private Switcher switcher;
     public void StartGame()
     {
-        switcher.SwitchToScene("IntroCustcene");
+        switcher.SwitchToScene("Floor_0");
     }
 
     public void QuitGame()

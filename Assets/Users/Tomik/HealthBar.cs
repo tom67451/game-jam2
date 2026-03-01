@@ -1,19 +1,16 @@
 using UnityEngine;
 using UnityEngine.UI;
+
 public class HealthBar : MonoBehaviour
-{
-    public Slider slider;
-    private void Start()
+{   
+    public Slider enemyHealthSlider;
+    public void SetHealth(float hp, float maxHp)
     {
-        SetMaxHealth(100f);
+        enemyHealthSlider.value = hp / maxHp;
     }
-    public void SetMaxHealth(float health)
+
+    void Update()
     {
-        slider.maxValue = health;
-        slider.value = health;
-    }
-    public void SetHealth(float health)
-    {
-        slider.value = health;
+        
     }
 }

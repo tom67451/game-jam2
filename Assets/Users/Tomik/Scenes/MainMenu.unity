@@ -119,6 +119,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &296929337
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 557955504588885351, guid: 5c7a3ab170454f946a29f644e13cbbbf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1064.3013
+      objectReference: {fileID: 0}
+    - target: {fileID: 557955504588885351, guid: 5c7a3ab170454f946a29f644e13cbbbf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 515.4768
+      objectReference: {fileID: 0}
+    - target: {fileID: 557955504588885351, guid: 5c7a3ab170454f946a29f644e13cbbbf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 557955504588885351, guid: 5c7a3ab170454f946a29f644e13cbbbf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 557955504588885351, guid: 5c7a3ab170454f946a29f644e13cbbbf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 557955504588885351, guid: 5c7a3ab170454f946a29f644e13cbbbf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 557955504588885351, guid: 5c7a3ab170454f946a29f644e13cbbbf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 557955504588885351, guid: 5c7a3ab170454f946a29f644e13cbbbf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 557955504588885351, guid: 5c7a3ab170454f946a29f644e13cbbbf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 557955504588885351, guid: 5c7a3ab170454f946a29f644e13cbbbf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034746363621606932, guid: 5c7a3ab170454f946a29f644e13cbbbf, type: 3}
+      propertyPath: m_Name
+      value: Switcher
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5c7a3ab170454f946a29f644e13cbbbf, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,6 +742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80a4e20a8c74283409573b4c999f3d2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuController
+  switcher: {fileID: 1606331982}
 --- !u!4 &786281320
 Transform:
   m_ObjectHideFlags: 0
@@ -814,7 +872,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 33.20569, y: 400}
-  m_SizeDelta: {x: 800, y: 150}
+  m_SizeDelta: {x: 1000, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &824515917
 MonoBehaviour:
@@ -836,7 +894,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0160alina v2"
+  m_text: FROm below
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1428,6 +1486,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466518635}
   m_CullTransparentMesh: 1
+--- !u!114 &1606331982 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 479304281741800914, guid: 5c7a3ab170454f946a29f644e13cbbbf, type: 3}
+  m_PrefabInstance: {fileID: 296929337}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b99a485defb07747a53fe70436e99e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LayourSwitcher
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1437,3 +1506,4 @@ SceneRoots:
   - {fileID: 810993177}
   - {fileID: 1408026049}
   - {fileID: 786281320}
+  - {fileID: 296929337}

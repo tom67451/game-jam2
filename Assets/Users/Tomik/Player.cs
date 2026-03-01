@@ -53,6 +53,7 @@ public class Player : MonoBehaviour
     public Image Option2Image;
 
     [SerializeField] public Upgrades[] upgrades;
+    public int killCount = 0;
 
     private bool isPaused;
     private int rng;

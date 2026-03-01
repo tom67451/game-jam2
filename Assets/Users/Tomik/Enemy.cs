@@ -1,6 +1,7 @@
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -13,18 +14,20 @@ public class Enemy : MonoBehaviour
 
     [Header("Enemy Settings")]
     public EnemyType enemyType;
-    public float hp = 50f;
+    public float hp;
+    public float maxHp;
     public float damage = 10f;
-    public float movementSpeed = 1.5f;
-    public float attackRange = 1f;
-    public float attackCooldown = 2f;
 
     public GameObject xp_orb;
     public GameObject playerObj;
     public EnemySpawningScript spawner;
+    public HealthBar healthBar;
+    void Awake() {
+        maxHp = hp;
+    }
 
     void Start()
-    {
+    { 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         spawner = player.GetComponentInChildren<EnemySpawningScript>();
         playerObj = GameObject.FindGameObjectWithTag("Player");
@@ -41,10 +44,16 @@ public class Enemy : MonoBehaviour
     }
 
     private void Update()
-    {
+    {   
+        
+        
+        healthBar.SetHealth(hp, maxHp);
+        
+        
         if (hp <= 0f)
         {
             spawner.enemiesCurrentlyAlive--;
+            player.killCount++;
             Instantiate(xp_orb, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y), Quaternion.identity);
             Destroy(gameObject);
         }
