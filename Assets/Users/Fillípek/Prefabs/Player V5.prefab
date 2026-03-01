@@ -1358,6 +1358,7 @@ MonoBehaviour:
   killCount: 0
   choiceTop: 3
   Shoot: {fileID: 92522984930766441}
+  switcher: {fileID: 0}
   clocker: 0
 --- !u!82 &-9013122647857516195
 AudioSource:
@@ -1370,7 +1371,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: f78039da1acdf5247a8178167cbf53e0, type: 3}
+  m_Resource: {fileID: 8300000, guid: 3d04ee72680bc0b47956697ac024774b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.3
   m_Pitch: 1
