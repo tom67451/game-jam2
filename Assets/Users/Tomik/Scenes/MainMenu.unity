@@ -249,8 +249,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4034746363621606932, guid: 5c7a3ab170454f946a29f644e13cbbbf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1606331984}
   m_SourcePrefab: {fileID: 100100000, guid: 5c7a3ab170454f946a29f644e13cbbbf, type: 3}
+--- !u!1 &312279147 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4034746363621606932, guid: 5c7a3ab170454f946a29f644e13cbbbf, type: 3}
+  m_PrefabInstance: {fileID: 296929337}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1430,12 +1438,25 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 479304281741800914, guid: 5c7a3ab170454f946a29f644e13cbbbf, type: 3}
   m_PrefabInstance: {fileID: 296929337}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 312279147}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b99a485defb07747a53fe70436e99e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LayourSwitcher
+--- !u!114 &1606331984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312279147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b131d912b52a3eb40a92ef06cce7a707, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Spawnerbinder
+  player: {fileID: 0}
 --- !u!1 &1712052491
 GameObject:
   m_ObjectHideFlags: 0
