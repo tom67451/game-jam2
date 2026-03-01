@@ -23,6 +23,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Users/Tomik/Scenes/Floor_10.unity
     guid: 273741440f9ef0c459915df86c53cf10
+  - enabled: 1
+    path: Assets/Users/Tomik/Scenes/Floor_2.unity
+    guid: 2174d21335a0aea419176769c4417b74
+  - enabled: 1
+    path: Assets/Users/Tomik/Scenes/Floor_3.unity
+    guid: eb8341b4003a85944899b2b949141df7
+  - enabled: 1
+    path: Assets/Users/Tomik/Scenes/Floor_4.unity
+    guid: bc69bdf940d019440a3708d42fac9410
+  - enabled: 1
+    path: Assets/Users/Tomik/Scenes/Floor_5.unity
+    guid: ed252b1ea83199d4d9c68436665a72d8
+  - enabled: 1
+    path: Assets/Users/Tomik/Scenes/Floor_6.unity
+    guid: 0012694ad4421c54a8592d4cdb28fe91
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

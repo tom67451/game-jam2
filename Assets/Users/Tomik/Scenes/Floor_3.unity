@@ -14384,6 +14384,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7020360410485226228, guid: e2ab2cc97433ad641a311681c051951d, type: 3}
+      propertyPath: waves.Array.data[0].isLastWaveOnFloor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020360410485226228, guid: e2ab2cc97433ad641a311681c051951d, type: 3}
       propertyPath: waves.Array.data[0].enemies.Array.size
       value: 1
       objectReference: {fileID: 0}
