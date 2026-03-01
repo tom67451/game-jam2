@@ -16,7 +16,7 @@ public class EnemySpawningScript : MonoBehaviour
     [SerializeField] private float spawnDistance = 2f;
     [SerializeField] private bool canSpawn = true;
 
-    public FloorSwitcher floorSwitcher;
+    public Switcher floorSwitcher;
     private GameObject player;
 
     private int currentWaveIndex = 0;
@@ -24,7 +24,7 @@ public class EnemySpawningScript : MonoBehaviour
     public int enemiesCurrentlyAlive;
 
     private void Start() {
-        floorSwitcher = Object.FindFirstObjectByType<FloorSwitcher>();
+        floorSwitcher = Object.FindFirstObjectByType<Switcher>();
         UpdateTilemapReferences();
         if (waves.Length > 0) {
             StartCoroutine(SpawnWaveRoutine());
