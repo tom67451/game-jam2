@@ -1,0 +1,157 @@
+using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
+
+
+public class FinalCutscenePlayer : MonoBehaviour
+{
+    public TextMeshProUGUI textComponent;
+    [SerializeField] private Image portraitImage;
+    [SerializeField] private Image diaBox;
+    public Sprite[] portraits;
+    public Sprite[] dia_boxes;
+    public string[] lines;
+    private float textSpeed = 0.05f;
+    private int index;
+    private bool isTyping = false;
+    private bool pictureon = false;
+
+
+    public Animator animator;
+    public GameObject Dialogue_box;
+    [SerializeField] private Switcher Switcher;
+
+    public int line_count;
+
+    public float clocker;
+    public bool clockbool = false;
+
+    void Start()
+    {
+        textComponent.text = string.Empty;
+        UpdatePortrait();
+        StartDialogue();
+
+    }
+    void Update()
+    {
+        if (clockbool)
+        {
+            clocker += Time.deltaTime;
+        }
+        
+
+        if (Input.GetKeyDown(KeyCode.Space) && pictureon == false || Input.GetMouseButtonDown(0) && pictureon == false || Input.GetKeyDown(KeyCode.KeypadEnter) && pictureon == false)
+        {
+            NextLine();
+            Debug.Log(line_count);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && pictureon == true || Input.GetMouseButtonDown(0) && pictureon == true || Input.GetKeyDown(KeyCode.KeypadEnter) && pictureon == true)
+        {
+            Debug.Log("Hide pic");
+            animator.SetBool("Show picture", false);
+            animator.SetBool("Hide picture", true);
+            clockbool = true;
+        }
+
+        if (clocker >= 2.9f)
+        {
+            Switcher.SwitchToFloor(0);
+            animator.speed = 0;
+        }
+
+        if (line_count == 21 && pictureon == false)
+        {
+            animator.SetBool("Show picture", true);
+            Dialogue_box.SetActive(false);
+            pictureon = true;
+        }
+    }
+
+    void StartDialogue()
+    {
+        index = 0;
+        StartCoroutine(TypeLine());
+    }
+
+    System.Collections.IEnumerator TypeLine()
+    {
+        isTyping = true;
+        textComponent.text = string.Empty;
+
+        foreach (char c in lines[index])
+        {
+            textComponent.text += c;
+            yield return new WaitForSeconds(textSpeed);
+        }
+
+        isTyping = false;
+    }
+
+    System.Collections.IEnumerator PlayAndWait(string anim)
+    {
+        animator.Play(anim);
+
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+
+        Debug.Log("Konec animace");
+    }
+
+
+
+    public void NextLine()
+    {
+        if (isTyping)
+        {
+            StopAllCoroutines();
+            textComponent.text = lines[index];
+            isTyping = false;
+            return;
+        }
+
+        if (index < lines.Length - 1)
+        {
+            index++;
+            line_count++;
+            UpdatePortrait();
+            UpdateDiaBox();
+            StartCoroutine(TypeLine());
+        }
+        else
+        {
+            textComponent.text = string.Empty;
+        }
+    }
+
+
+    public void UpdatePortrait()
+    {
+        if (portraitImage == null) return;
+        if (portraits.Length > 0 && index >= 0 && index < portraits.Length)
+        {
+            portraitImage.sprite = portraits[index];
+            portraitImage.enabled = portraits[index] != null;
+        }
+        else
+        {
+            portraitImage.sprite = null;
+            portraitImage.enabled = false;
+        }
+    }
+
+    public void UpdateDiaBox()
+    {
+        if (diaBox == null) return;
+        if (dia_boxes.Length > 0 && index >= 0 && index < dia_boxes.Length)
+        {
+            diaBox.sprite = dia_boxes[index];
+            diaBox.enabled = dia_boxes[index] != null;
+        }
+        else
+        {
+            diaBox.sprite = null;
+            diaBox.enabled = false;
+        }
+    }
+}
