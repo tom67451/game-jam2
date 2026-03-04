@@ -203,7 +203,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.773
   m_Color: {r: 0.7735849, g: 0.13501246, b: 0.77216506, a: 1}
-  m_Intensity: 150
+  m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000

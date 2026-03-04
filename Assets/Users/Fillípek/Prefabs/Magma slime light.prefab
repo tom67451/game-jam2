@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 6329810210507886447}
   - component: {fileID: 4967898796527547982}
   - component: {fileID: 8130242783100868670}
-  - component: {fileID: -6263178306592794913}
+  - component: {fileID: 6544529441901410836}
   m_Layer: 9
   m_Name: Magma slime light
   m_TagString: Enemy
@@ -221,7 +221,7 @@ MonoBehaviour:
   maxAcceleration: -2.5
   rotationSpeed: 360
   slowdownDistance: 0.6
-  pickNextWaypointDist: 0.2
+  pickNextWaypointDist: 2.27
   endReachedDistance: 0.2
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
@@ -390,7 +390,7 @@ MonoBehaviour:
   hp: 45
   maxHp: 0
   damage: 7
-  xp_orb: {fileID: 4002872362095769937, guid: 8bedba17253fb6f4fbdd3b6a6e439d74, type: 3}
+  xp_orb: {fileID: 4002872362095769937, guid: b755e39e7a2f1e547a9d3296cf6d5037, type: 3}
   playerObj: {fileID: 0}
   spawner: {fileID: 0}
   healthBar: {fileID: 7939469627258766768}
@@ -416,7 +416,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-6263178306592794913
+--- !u!114 &6544529441901410836
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -432,11 +432,11 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 0.815265, b: 0.033018887, a: 1}
-  m_Intensity: 300
+  m_Color: {r: 0.8301887, g: 0.6598314, b: 0.27803493, a: 1}
+  m_Intensity: 3
   m_LightVolumeIntensity: 1
-  m_LightVolumeEnabled: 1
-  m_ApplyToSortingLayers: 
+  m_LightVolumeEnabled: 0
+  m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
