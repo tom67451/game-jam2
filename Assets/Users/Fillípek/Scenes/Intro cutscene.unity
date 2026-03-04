@@ -241,7 +241,7 @@ MonoBehaviour:
   lines:
   - Long time ago...
   - .. in a dark cave, deep beneath the surface...
-  - .. two creatures never meant to meet each other meet.
+  - .. two creatures never meant to meet each other met.
   - ... and you know, I can't even imagine living down here-
   - there's no sun, grass, colors, people...
   - like- what do you even do down here?
@@ -476,6 +476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b99a485defb07747a53fe70436e99e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Switcher
+  currentFloorIndex: 0
 --- !u!4 &1279119617
 Transform:
   m_ObjectHideFlags: 0

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class FinalCutscenePlayer : MonoBehaviour
 {
+    [SerializeField] private bool Bad_ending;
     public TextMeshProUGUI textComponent;
     [SerializeField] private Image portraitImage;
     [SerializeField] private Image diaBox;
@@ -14,58 +15,85 @@ public class FinalCutscenePlayer : MonoBehaviour
     private float textSpeed = 0.05f;
     private int index;
     private bool isTyping = false;
-    private bool pictureon = false;
 
+    private bool started = false;
 
     public Animator animator;
     public GameObject Dialogue_box;
     [SerializeField] private Switcher Switcher;
-
+    
     public int line_count;
 
     public float clocker;
-    public bool clockbool = false;
+    public bool clockbool;
+
+    public bool skipper = false;
 
     void Start()
     {
+        if (Bad_ending == true)
+        {
+            animator.SetBool("Bad end", true);
+            lines[7] = "You tried your best to help the slime.";
+            lines[8] = "Many have tried and failed before you..";
+            lines[9] = "Thank you for playing!";
+        }
+
         textComponent.text = string.Empty;
         UpdatePortrait();
         StartDialogue();
-
     }
+
     void Update()
     {
         if (clockbool)
         {
             clocker += Time.deltaTime;
         }
-        
 
-        if (Input.GetKeyDown(KeyCode.Space) && pictureon == false || Input.GetMouseButtonDown(0) && pictureon == false || Input.GetKeyDown(KeyCode.KeypadEnter) && pictureon == false)
+        if (Input.GetKeyDown(KeyCode.Space) && started == false || Input.GetMouseButtonDown(0) && started == false || Input.GetKeyDown(KeyCode.KeypadEnter) && started == false)
         {
             NextLine();
             Debug.Log(line_count);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && pictureon == true || Input.GetMouseButtonDown(0) && pictureon == true || Input.GetKeyDown(KeyCode.KeypadEnter) && pictureon == true)
+        if (Input.GetKeyDown(KeyCode.Space) && line_count == 4 && started == true && clockbool == false || Input.GetMouseButtonDown(0) && line_count == 4 && started == true && clockbool == false || Input.GetKeyDown(KeyCode.KeypadEnter) && line_count == 4 && started == true && clockbool == false)
         {
-            Debug.Log("Hide pic");
-            animator.SetBool("Show picture", false);
-            animator.SetBool("Hide picture", true);
-            clockbool = true;
-        }
-
-        if (clocker >= 2.9f)
-        {
-            Switcher.SwitchToFloor(0);
-            animator.speed = 0;
-        }
-
-        if (line_count == 21 && pictureon == false)
-        {
-            animator.SetBool("Show picture", true);
+            NextLine();
             Dialogue_box.SetActive(false);
-            pictureon = true;
+            clockbool = true;
+            Debug.Log(line_count + "!");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && line_count == 7 || Input.GetMouseButtonDown(0) && line_count == 7 || Input.GetKeyDown(KeyCode.KeypadEnter) && line_count == 7)
+        {
+            
+            Debug.Log(line_count + "?");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && line_count == 9 || Input.GetMouseButtonDown(0) && line_count == 9 || Input.GetKeyDown(KeyCode.KeypadEnter) && line_count == 9)
+        {
+            Switcher.SwitchToScene("MainMenu");
+            Debug.Log("Returning to main menu");
+        }
+
+        if (line_count == 4 && started == false && skipper == false)
+        {
+            animator.SetBool("Start", true);
+            Debug.Log("Line count is 4");
+            started = true;
+        }
+
+        if (clocker >= 10)
+        {
+            Dialogue_box.SetActive(true);
+            animator.SetBool("Continue", true);
+            animator.SetBool("Start", false);
+            Debug.Log("Time's up!");
+            started = false;
+            clocker = 0;
+            clockbool = false;
+            skipper = true;
         }
     }
 
