@@ -539,7 +539,7 @@ MonoBehaviour:
   hp: 30
   maxHp: 0
   damage: 15
-  xp_orb: {fileID: 4002872362095769937, guid: 8bedba17253fb6f4fbdd3b6a6e439d74, type: 3}
+  xp_orb: {fileID: 4002872362095769937, guid: c2b1cd3bceb35db48a2b930630d435c1, type: 3}
   playerObj: {fileID: 0}
   spawner: {fileID: 0}
   healthBar: {fileID: 6910181885446605886}

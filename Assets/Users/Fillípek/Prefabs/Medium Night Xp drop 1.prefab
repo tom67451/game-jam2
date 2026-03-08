@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2596574350674455306}
   - component: {fileID: 3951222964851833120}
   m_Layer: 10
-  m_Name: Night Xp drop
+  m_Name: Medium Night Xp drop 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,8 +31,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_SortingOrder: 40
   m_MaskInteraction: 0
   m_Sprite: {fileID: -3135200691326019687, guid: becb8edac45c9374b88859e5be5dc532, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.37254906, g: 0.6694638, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Xporbbehaviour
   player: {fileID: 0}
-  xp_value: 10
+  xp_value: 25
 --- !u!50 &7247107681500373473
 Rigidbody2D:
   serializedVersion: 5
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.773
-  m_Color: {r: 0.7735849, g: 0.13501246, b: 0.77216506, a: 1}
+  m_Color: {r: 0.13333333, g: 0.42362076, b: 0.77254903, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
