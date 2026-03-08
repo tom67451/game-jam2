@@ -7,6 +7,7 @@ public class Shoot : MonoBehaviour
     public GameObject spit;
     public float speed;
     public GameObject player;
+    public Player Player;
     public static float damage = 10f;
     public AudioSource spitsound;
 
@@ -17,7 +18,7 @@ public class Shoot : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && Player.dead == false)
         {
             spitsound.Play();
             Vector3 clickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

@@ -1,7 +1,10 @@
 using System.Net.Http.Headers;
 using TMPro;
+using Unity.VectorGraphics;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [System.Serializable]
@@ -62,15 +65,31 @@ public class Player : MonoBehaviour
     public Shoot Shoot;
     public Switcher switcher;
 
+    //Death section
+    [SerializeField] GameObject deathUi;
+    private Animator deathAnimator;
+    public bool dead = false;
+    private GameObject spawner;
+    private Light2D playerLight;
+    private float lightClock;
+
     public float clocker;
     private void Start()
     {
         choiceTop = upgrades.Length;
+        deathAnimator = deathUi.GetComponent<Animator>();
         switcher = GameObject.FindGameObjectWithTag("Switcher").GetComponent<Switcher>();
+        spawner = GameObject.FindGameObjectWithTag("Spawner");
+        playerLight = gameObject.GetComponent<Light2D>();
     }
     private void Update()
     {
         clocker += Time.deltaTime;
+
+        if (dead)
+        {
+            lightClock += Time.deltaTime;
+        }
 
         if (clocker >= 1 && hp < maxHp)
         {
@@ -80,8 +99,7 @@ public class Player : MonoBehaviour
 
         if (hp <= 0)
         {
-            switcher.SwitchToScene("Floor_0");
-            switcher.currentFloorIndex = 0;
+            Die();
         }
 
         if (xp >= xpToNextLevel)
@@ -100,6 +118,12 @@ public class Player : MonoBehaviour
             xpToNextLevel = xpToNextLevel * xpGrowthRate;
             totalxp += xp;
         }    
+
+        if (dead && lightClock >= 0.1f && playerLight.intensity > 0)
+        {
+            lightClock = 0;
+            playerLight.intensity -= 0.1f;
+        }
 
         Option1Name.text = upgrades[rng].nadpis;
         Option1Text.text = upgrades[rng].popis;
@@ -153,5 +177,47 @@ public class Player : MonoBehaviour
     {
         Time.timeScale = 1f;
         isPaused = false;
+    }
+
+    void Die()
+    {
+        dead = true;
+        movementSpeed = 0f;
+        deathUi.SetActive(true);
+        spawner.SetActive(false);
+
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach (GameObject enemy in enemies)
+        {
+            Destroy(enemy);
+        }
+    }
+
+    public void Respawn()
+    {
+        dead = false;
+        movementSpeed = 2f;
+        deathUi.SetActive(false);
+        hp = 100;
+        maxHp = 100;
+        level = 0;
+        xp = 0;
+        xpToNextLevel = 100f;
+        regenerationRate = 0f;
+        SceneManager.LoadScene(3);
+    }
+
+    public void Quit()
+    {
+        movementSpeed = 2f;
+        hp = 100;
+        maxHp = 100;
+        level = 0;
+        xp = 0;
+        xpToNextLevel = 100f;
+        regenerationRate = 0f;
+        deathUi.SetActive(false);
+        SceneManager.LoadScene(0);
     }
 }

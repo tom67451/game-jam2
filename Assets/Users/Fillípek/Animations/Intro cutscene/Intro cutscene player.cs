@@ -26,8 +26,12 @@ public class IntroCutscenePlayer : MonoBehaviour
     public float clocker;
     public bool clockbool = false;
 
+    public Player player;
+
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        
         textComponent.text = string.Empty;
         UpdatePortrait();
         StartDialogue();
@@ -57,6 +61,10 @@ public class IntroCutscenePlayer : MonoBehaviour
 
         if (clocker >= 2.9f)
         {
+            if (player != null)
+            {
+                player.dead = false;
+            }
             Switcher.SwitchToFloor(0);
             animator.speed = 0;
         }

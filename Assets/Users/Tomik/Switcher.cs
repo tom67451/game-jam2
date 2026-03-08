@@ -40,9 +40,10 @@ public class Switcher : MonoBehaviour
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.L)) {
+        /*if (Input.GetKeyDown(KeyCode.L)) {
             SwitchToFloor(currentFloorIndex + 1);
         }
+        */
     }
 
     public void SwitchToFloor(int newFloorIndex) {
