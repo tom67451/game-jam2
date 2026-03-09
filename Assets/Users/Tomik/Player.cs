@@ -205,6 +205,7 @@ public class Player : MonoBehaviour
         xp = 0;
         xpToNextLevel = 100f;
         regenerationRate = 0f;
+        playerLight.intensity = 5f;
         SceneManager.LoadScene(3);
     }
 
@@ -217,6 +218,7 @@ public class Player : MonoBehaviour
         xp = 0;
         xpToNextLevel = 100f;
         regenerationRate = 0f;
+        playerLight.intensity = 5f;
         deathUi.SetActive(false);
         SceneManager.LoadScene(0);
     }

@@ -2,13 +2,17 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System.Threading.Tasks;
 
 public class Switcher : MonoBehaviour
 {
     public static Switcher instance;
     public int currentFloorIndex = 0;
 
+    public Animator fadeAnimator;
 
+    bool clockClocker;
+    float clocker;
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -21,6 +25,8 @@ public class Switcher : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        fadeAnimator = GameObject.FindGameObjectWithTag("Fader").GetComponent<Animator>();
+
         GameObject player = GameObject.FindWithTag("Player");
         if (player != null)
         {
@@ -44,13 +50,34 @@ public class Switcher : MonoBehaviour
             SwitchToFloor(currentFloorIndex + 1);
         }
         */
+
+        if (clockClocker)
+        {
+            clocker += Time.deltaTime;
+        }
+
+        if (clocker >= 0.3f)
+        {
+            fadeAnimator.SetBool("Start", false);
+            fadeAnimator.SetBool("Continue", true);
+            clockClocker = false;
+            clocker = 0;
+        }
     }
 
-    public void SwitchToFloor(int newFloorIndex) {
+    public async Task SwitchToFloor(int newFloorIndex) {
         string sceneName = "Floor_" + newFloorIndex;
 
         Debug.Log("Switching to: " + sceneName);
 
+        if (fadeAnimator != null)
+        {
+            fadeAnimator.SetBool("Start", true);
+            fadeAnimator.SetBool("Continue", false);
+            clockClocker = true;
+        }
+
+        await Task.Delay(300);
 
         if (Application.CanStreamedLevelBeLoaded(sceneName)) {
             currentFloorIndex = newFloorIndex;
@@ -60,6 +87,13 @@ public class Switcher : MonoBehaviour
         }
     }
     public void SwitchToScene(string sceneName) {
+        if (fadeAnimator != null)
+        {
+            fadeAnimator.SetBool("Start", true);
+            fadeAnimator.SetBool("Continue", false);
+            clockClocker = true;
+        }
+        
         if (Application.CanStreamedLevelBeLoaded(sceneName)) {
             SceneManager.LoadScene(sceneName);
         } else {
