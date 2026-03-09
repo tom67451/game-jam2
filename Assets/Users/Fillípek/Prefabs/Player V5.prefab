@@ -1707,6 +1707,7 @@ MonoBehaviour:
     speed: 0.5
     health: 0
     regen: 0
+    attSpeed: 0
   - nadpis: Tough blob
     popis: Increases maximum health
     image: {fileID: 174502976928239012, guid: 7de4df3fc9c14c14d9dece2d5f019499, type: 3}
@@ -1714,6 +1715,7 @@ MonoBehaviour:
     speed: 0
     health: 10
     regen: 0
+    attSpeed: 0
   - nadpis: Blob of damage
     popis: Increases damage
     image: {fileID: 2175247460903423007, guid: ce443fbe5e18c79499d9a3b3b404e873, type: 3}
@@ -1721,6 +1723,7 @@ MonoBehaviour:
     speed: 0
     health: 0
     regen: 0
+    attSpeed: 0
   - nadpis: Healthy blob
     popis: Slowly regenerates health
     image: {fileID: -3309222640135144339, guid: da1646f96b2da68419234afc326f0c6b, type: 3}
@@ -1728,6 +1731,7 @@ MonoBehaviour:
     speed: 0
     health: 0
     regen: 0.5
+    attSpeed: 0
   - nadpis: Speedy Tank blob
     popis: Slight increase in speed and max health
     image: {fileID: 1098808687311315933, guid: d64a04d69e27dc34f8e52d10a1451402, type: 3}
@@ -1735,6 +1739,7 @@ MonoBehaviour:
     speed: 0.2
     health: 4
     regen: 0
+    attSpeed: 0
   - nadpis: Hit&Run blob
     popis: Slight increase in speed and damage
     image: {fileID: -8875916169995281919, guid: 316fc2cfdd1d9124d977e966c19289eb, type: 3}
@@ -1742,6 +1747,7 @@ MonoBehaviour:
     speed: 0.2
     health: 0
     regen: 0
+    attSpeed: 0
   - nadpis: Warrior blob
     popis: Slight increase in damage and max health
     image: {fileID: 3928388563220987495, guid: 4c8423a9ff6874d43ad314f5b3347906, type: 3}
@@ -1749,6 +1755,15 @@ MonoBehaviour:
     speed: 0
     health: 4
     regen: 0
+    attSpeed: 0
+  - nadpis: Faster blob
+    popis: Increases spit rate
+    image: {fileID: 3928388563220987495, guid: 4c8423a9ff6874d43ad314f5b3347906, type: 3}
+    damage: 0
+    speed: 0
+    health: 0
+    regen: 0
+    attSpeed: 0.2
   killCount: 0
   choiceTop: 3
   Shoot: {fileID: 92522984930766441}

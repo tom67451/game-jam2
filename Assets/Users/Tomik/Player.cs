@@ -17,6 +17,7 @@ public class Upgrades
     public float speed;
     public float health;
     public float regen;
+    public float attSpeed;
 }
 
 public class Player : MonoBehaviour
@@ -162,6 +163,7 @@ public class Player : MonoBehaviour
         maxHp += upgrades[rng].health;
         movementSpeed += upgrades[rng].speed;
         regenerationRate += upgrades[rng].regen;
+        attackSpeed += upgrades[rng].attSpeed;
         lvlUI.SetActive(false);
         ResumeGame();
     }
@@ -172,6 +174,7 @@ public class Player : MonoBehaviour
         maxHp += upgrades[rng2].health;
         movementSpeed += upgrades[rng2].speed;
         regenerationRate += upgrades[rng2].regen;
+        attackSpeed += upgrades[rng2].attSpeed;
         lvlUI.SetActive(false);
         ResumeGame();
     }

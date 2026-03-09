@@ -29,7 +29,7 @@ public class Shoot : MonoBehaviour
 
         if (attackProgress <= 0.5f)
         {
-            attackProgress = clocker / attackSpeed;
+            attackProgress = clocker * attackSpeed;
         }
         
 
