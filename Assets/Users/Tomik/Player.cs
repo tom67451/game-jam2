@@ -36,7 +36,11 @@ public class Player : MonoBehaviour
     public float hp = 100f;
     public float maxHp = 100f;
     public float regenerationRate = 0f;
-    public bool invincible = false; 
+    public bool invincible = false;
+
+    [Header("Attack")]
+    public float attackSpeed = 1f;
+    [SerializeField] GameObject shootBar;
 
     [Header("Special abilites")]
     public float magnetRadius = 5f;
@@ -65,7 +69,7 @@ public class Player : MonoBehaviour
     public Shoot Shoot;
     public Switcher switcher;
 
-    //Death section
+    [Header("Death stuff")]
     [SerializeField] GameObject deathUi;
     private Animator deathAnimator;
     public bool dead = false;
@@ -74,6 +78,8 @@ public class Player : MonoBehaviour
     private float lightClock;
 
     public float clocker;
+
+    
     private void Start()
     {
         choiceTop = upgrades.Length;
@@ -90,6 +96,8 @@ public class Player : MonoBehaviour
         {
             lightClock += Time.deltaTime;
         }
+
+        shootBar.transform.localScale = new Vector3(Shoot.attackProgress * 5, 0.05f, 0);
 
         if (clocker >= 1 && hp < maxHp)
         {

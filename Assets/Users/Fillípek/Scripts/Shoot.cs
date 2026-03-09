@@ -12,7 +12,9 @@ public class Shoot : MonoBehaviour
     public static float damage = 10f;
     public AudioSource spitsound;
     public float clocker;
-    public float attackSpeed = 1;
+    public float attackSpeed;
+
+    public float attackProgress;
 
     private void Start()
     {
@@ -21,11 +23,20 @@ public class Shoot : MonoBehaviour
 
     void Update()
     {
+        attackSpeed = Player.attackSpeed;
+
         clocker += Time.deltaTime;
 
-        if ((Input.GetMouseButtonDown(0) && Player.dead == false) && (clocker / attackSpeed >= 0.5f))
+        if (attackProgress <= 0.5f)
+        {
+            attackProgress = clocker / attackSpeed;
+        }
+        
+
+        if ((Input.GetMouseButtonDown(0) && Player.dead == false) && (attackProgress >= 0.5f))
         {
             clocker = 0;
+            attackProgress = 0;
             spitsound.Play();
             Vector3 clickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             clickPos.z = 0;
