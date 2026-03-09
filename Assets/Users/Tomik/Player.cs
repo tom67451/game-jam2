@@ -73,11 +73,13 @@ public class Player : MonoBehaviour
     public Image Option2Image;
 
     [Header ("Upgrades")]
-    [SerializeField] public Upgrades[] upgrades;
+    public Upgrades[] upgrades;
 
     [Header ("Super upgrades")]
-    [SerializeField] public Super_Upgrades[] super_upgrades;
+    public Super_Upgrades[] super_upgrades;
+    public bool isSuperUpgrade = false;
 
+    [Header ("Misc")]
     public int killCount = 0;
     private bool isPaused;
     private int rng;
@@ -147,6 +149,7 @@ public class Player : MonoBehaviour
         #region Normal upgrades logic
         if ((xp >= xpToNextLevel && (level + 1) % 3 != 0) || (xp >= xpToNextLevel && level == 0))
         {
+            isSuperUpgrade = false;
             lvlUI.SetActive(true);
             PauseGame();
 
@@ -166,6 +169,7 @@ public class Player : MonoBehaviour
         #region Super upgrades logic
         else if (xp >= xpToNextLevel && ((level + 1) % 3 == 0 && level != 0))
         {
+            isSuperUpgrade = true;
             lvlUI.SetActive(true);
             PauseGame();
 
@@ -183,13 +187,27 @@ public class Player : MonoBehaviour
         #endregion
 
         #region Upgrades options writing
-        Option1Name.text = upgrades[rng].nadpis;
-        Option1Text.text = upgrades[rng].popis;
-        Option1Image.sprite = upgrades[rng].image;
+        if (isSuperUpgrade == true)
+        {
+            Option1Name.text = upgrades[rng3].nadpis;
+            Option1Text.text = upgrades[rng3].popis;
+            Option1Image.sprite = upgrades[rng3].image;
 
-        Option2Name.text = upgrades[rng2].nadpis;
-        Option2Text.text = upgrades[rng2].popis;
-        Option2Image.sprite = upgrades[rng2].image;
+            Option2Name.text = upgrades[rng4].nadpis;
+            Option2Text.text = upgrades[rng4].popis;
+            Option2Image.sprite = upgrades[rng4].image;
+        }
+        else
+        {
+            Option1Name.text = upgrades[rng].nadpis;
+            Option1Text.text = upgrades[rng].popis;
+            Option1Image.sprite = upgrades[rng].image;
+
+            Option2Name.text = upgrades[rng2].nadpis;
+            Option2Text.text = upgrades[rng2].popis;
+            Option2Image.sprite = upgrades[rng2].image;
+        }
+        
         #endregion
     }
 
