@@ -20,11 +20,23 @@ public class Upgrades
     public float attSpeed;
 }
 
+public class Super_Upgrades
+{
+    public string nadpis;
+    public string popis;
+    public Sprite image;
+    public float damage;
+    public float speed;
+    public float health;
+    public float regen;
+    public float attSpeed;
+}
+
 public class Player : MonoBehaviour
-{   
-    
+{
+
     [Header("Levels")]
-    public int level = 1; 
+    public int level = 1;
     public float xp = 0f;
     public float xpToNextLevel = 100f;
     public float xpGrowthRate = 1.5f;
@@ -54,19 +66,26 @@ public class Player : MonoBehaviour
     public TextMeshProUGUI Option1Name;
     public TextMeshProUGUI Option1Text;
     public Image Option1Image;
-    
+
     public Button Option2;
     public TextMeshProUGUI Option2Name;
     public TextMeshProUGUI Option2Text;
     public Image Option2Image;
 
+    [Header ("Upgrades")]
     [SerializeField] public Upgrades[] upgrades;
-    public int killCount = 0;
 
+    [Header ("Super upgrades")]
+    [SerializeField] public Super_Upgrades[] super_upgrades;
+
+    public int killCount = 0;
     private bool isPaused;
     private int rng;
     private int rng2;
+    private int rng3;
+    private int rng4;
     public int choiceTop = 3;
+    public int superChoiceTop = 1;
     public Shoot Shoot;
     public Switcher switcher;
 
@@ -80,10 +99,11 @@ public class Player : MonoBehaviour
 
     public float clocker;
 
-    
+
     private void Start()
     {
         choiceTop = upgrades.Length;
+        superChoiceTop = super_upgrades.Length;
         deathAnimator = deathUi.GetComponent<Animator>();
         switcher = GameObject.FindGameObjectWithTag("Switcher").GetComponent<Switcher>();
         spawner = GameObject.FindGameObjectWithTag("Spawner");
@@ -93,25 +113,39 @@ public class Player : MonoBehaviour
     {
         clocker += Time.deltaTime;
 
+        #region Dying light logic
         if (dead)
         {
             lightClock += Time.deltaTime;
         }
+        if (dead && lightClock >= 0.1f && playerLight.intensity > 0)
+        {
+            lightClock = 0;
+            playerLight.intensity -= 0.1f;
+        }
+        #endregion
 
+        #region Shootbar logic
         shootBar.transform.localScale = new Vector3(Shoot.attackProgress * 5, 0.05f, 0);
+        #endregion
 
+        #region Regen logic
         if (clocker >= 1 && hp < maxHp)
         {
             hp += regenerationRate;
             clocker = 0;
         }
+        #endregion
 
+        #region Death logic
         if (hp <= 0)
         {
             Die();
         }
+        #endregion
 
-        if (xp >= xpToNextLevel)
+        #region Normal upgrades logic
+        if ((xp >= xpToNextLevel && (level + 1) % 3 != 0) || (xp >= xpToNextLevel && level == 0))
         {
             lvlUI.SetActive(true);
             PauseGame();
@@ -126,14 +160,29 @@ public class Player : MonoBehaviour
             level++;
             xpToNextLevel = xpToNextLevel * xpGrowthRate;
             totalxp += xp;
-        }    
-
-        if (dead && lightClock >= 0.1f && playerLight.intensity > 0)
-        {
-            lightClock = 0;
-            playerLight.intensity -= 0.1f;
         }
+        #endregion
 
+        #region Super upgrades logic
+        else if (xp >= xpToNextLevel && ((level + 1) % 3 == 0 && level != 0))
+        {
+            lvlUI.SetActive(true);
+            PauseGame();
+
+            rng3 = Random.Range(0, superChoiceTop);
+            rng4 = Random.Range(0, superChoiceTop);
+            while (rng4 == rng3)
+            {
+                rng4 = Random.Range(0, superChoiceTop);
+            }
+            xp -= xpToNextLevel;
+            level++;
+            xpToNextLevel = xpToNextLevel * xpGrowthRate;
+            totalxp += xp;
+        }
+        #endregion
+
+        #region Upgrades options writing
         Option1Name.text = upgrades[rng].nadpis;
         Option1Text.text = upgrades[rng].popis;
         Option1Image.sprite = upgrades[rng].image;
@@ -141,6 +190,7 @@ public class Player : MonoBehaviour
         Option2Name.text = upgrades[rng2].nadpis;
         Option2Text.text = upgrades[rng2].popis;
         Option2Image.sprite = upgrades[rng2].image;
+        #endregion
     }
 
     private static Player instance;

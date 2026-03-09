@@ -1766,6 +1766,7 @@ MonoBehaviour:
     attSpeed: 0.2
   killCount: 0
   choiceTop: 3
+  superChoiceTop: 1
   Shoot: {fileID: 92522984930766441}
   switcher: {fileID: 0}
   deathUi: {fileID: 491773797631400421}
