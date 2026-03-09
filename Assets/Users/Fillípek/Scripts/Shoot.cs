@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Utilities;
 using UnityEngine.Rendering;
 
 public class Shoot : MonoBehaviour
@@ -10,6 +11,8 @@ public class Shoot : MonoBehaviour
     public Player Player;
     public static float damage = 10f;
     public AudioSource spitsound;
+    public float clocker;
+    public float attackSpeed = 1;
 
     private void Start()
     {
@@ -18,8 +21,11 @@ public class Shoot : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && Player.dead == false)
+        clocker += Time.deltaTime;
+
+        if ((Input.GetMouseButtonDown(0) && Player.dead == false) && (clocker / attackSpeed >= 0.5f))
         {
+            clocker = 0;
             spitsound.Play();
             Vector3 clickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             clickPos.z = 0;
