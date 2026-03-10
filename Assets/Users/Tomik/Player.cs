@@ -193,13 +193,13 @@ public class Player : MonoBehaviour
         if (isSuperUpgrade == true)
         {
             Debug.Log("Writing super upgrades");
-            Option1Name.text = upgrades[rng3].nadpis;
-            Option1Text.text = upgrades[rng3].popis;
-            Option1Image.sprite = upgrades[rng3].image;
+            Option1Name.text = super_upgrades[rng3].nadpis;
+            Option1Text.text = super_upgrades[rng3].popis;
+            Option1Image.sprite = super_upgrades[rng3].image;
 
-            Option2Name.text = upgrades[rng4].nadpis;
-            Option2Text.text = upgrades[rng4].popis;
-            Option2Image.sprite = upgrades[rng4].image;
+            Option2Name.text = super_upgrades[rng4].nadpis;
+            Option2Text.text = super_upgrades[rng4].popis;
+            Option2Image.sprite = super_upgrades[rng4].image;
         }
         else if (isSuperUpgrade == false)
         {
