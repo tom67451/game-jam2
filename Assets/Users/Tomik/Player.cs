@@ -31,6 +31,7 @@ public class Super_Upgrades
     public float health;
     public float regen;
     public float attSpeed;
+    public bool semiAuto;
 }
 
 public class Player : MonoBehaviour
@@ -232,22 +233,46 @@ public class Player : MonoBehaviour
 
     public void Option1Click()
     {
-        Shoot.damage += upgrades[rng].damage;
-        maxHp += upgrades[rng].health;
-        movementSpeed += upgrades[rng].speed;
-        regenerationRate += upgrades[rng].regen;
-        attackSpeed += upgrades[rng].attSpeed;
+        if (isSuperUpgrade)
+        {
+            Shoot.damage += super_upgrades[rng3].damage;
+            maxHp += super_upgrades[rng3].health;
+            movementSpeed += super_upgrades[rng3].speed;
+            regenerationRate += super_upgrades[rng3].regen;
+            attackSpeed += super_upgrades[rng3].attSpeed;
+            Shoot.semiAuto = super_upgrades[rng3].semiAuto;
+        }
+        else
+        {
+            Shoot.damage += upgrades[rng].damage;
+            maxHp += upgrades[rng].health;
+            movementSpeed += upgrades[rng].speed;
+            regenerationRate += upgrades[rng].regen;
+            attackSpeed += upgrades[rng].attSpeed;
+        }
         lvlUI.SetActive(false);
         ResumeGame();
     }
 
     public void Option2Click()
     {
-        Shoot.damage += upgrades[rng2].damage;
-        maxHp += upgrades[rng2].health;
-        movementSpeed += upgrades[rng2].speed;
-        regenerationRate += upgrades[rng2].regen;
-        attackSpeed += upgrades[rng2].attSpeed;
+        if (isSuperUpgrade == true)
+        {
+            Shoot.damage += super_upgrades[rng4].damage;
+            maxHp += super_upgrades[rng4].health;
+            movementSpeed += super_upgrades[rng4].speed;
+            regenerationRate += super_upgrades[rng4].regen;
+            attackSpeed += super_upgrades[rng4].attSpeed;
+            Shoot.semiAuto = super_upgrades[rng4].semiAuto;
+        }
+        else
+        {
+            Shoot.damage += upgrades[rng2].damage;
+            maxHp += upgrades[rng2].health;
+            movementSpeed += upgrades[rng2].speed;
+            regenerationRate += upgrades[rng2].regen;
+            attackSpeed += upgrades[rng2].attSpeed; 
+        }
         lvlUI.SetActive(false);
         ResumeGame();
     }

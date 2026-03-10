@@ -5535,63 +5535,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1001 &212300457
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 557955504588885351, guid: 5c7a3ab170454f946a29f644e13cbbbf, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.6107
-      objectReference: {fileID: 0}
-    - target: {fileID: 557955504588885351, guid: 5c7a3ab170454f946a29f644e13cbbbf, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.4445
-      objectReference: {fileID: 0}
-    - target: {fileID: 557955504588885351, guid: 5c7a3ab170454f946a29f644e13cbbbf, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 557955504588885351, guid: 5c7a3ab170454f946a29f644e13cbbbf, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 557955504588885351, guid: 5c7a3ab170454f946a29f644e13cbbbf, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 557955504588885351, guid: 5c7a3ab170454f946a29f644e13cbbbf, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 557955504588885351, guid: 5c7a3ab170454f946a29f644e13cbbbf, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 557955504588885351, guid: 5c7a3ab170454f946a29f644e13cbbbf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 557955504588885351, guid: 5c7a3ab170454f946a29f644e13cbbbf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 557955504588885351, guid: 5c7a3ab170454f946a29f644e13cbbbf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4034746363621606932, guid: 5c7a3ab170454f946a29f644e13cbbbf, type: 3}
-      propertyPath: m_Name
-      value: Switcher
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5c7a3ab170454f946a29f644e13cbbbf, type: 3}
 --- !u!1001 &294128288
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5680,6 +5623,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 92522984930766441, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: semiAuto
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 92522984930766441, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: attackSpeed2
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 491773797631400421, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -5747,6 +5698,118 @@ PrefabInstance:
     - target: {fileID: 4183922250723940216, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
       propertyPath: attackSpeed
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183922250723940216, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: upgrades.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183922250723940216, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: upgrades.Array.data[3].image
+      value: 
+      objectReference: {fileID: 1098808687311315933, guid: d64a04d69e27dc34f8e52d10a1451402, type: 3}
+    - target: {fileID: 4183922250723940216, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: upgrades.Array.data[3].popis
+      value: Slight increase in speed and max health
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183922250723940216, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: upgrades.Array.data[3].regen
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183922250723940216, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: upgrades.Array.data[3].speed
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183922250723940216, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: upgrades.Array.data[4].image
+      value: 
+      objectReference: {fileID: -8875916169995281919, guid: 316fc2cfdd1d9124d977e966c19289eb, type: 3}
+    - target: {fileID: 4183922250723940216, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: upgrades.Array.data[4].popis
+      value: Slight increase in speed and damage
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183922250723940216, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: upgrades.Array.data[5].image
+      value: 
+      objectReference: {fileID: 3928388563220987495, guid: 4c8423a9ff6874d43ad314f5b3347906, type: 3}
+    - target: {fileID: 4183922250723940216, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: upgrades.Array.data[5].popis
+      value: Slight increase in damage and max health
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183922250723940216, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: upgrades.Array.data[5].speed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183922250723940216, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: upgrades.Array.data[6].popis
+      value: Increases spit rate
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183922250723940216, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: upgrades.Array.data[3].health
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183922250723940216, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: upgrades.Array.data[3].nadpis
+      value: Speedy Tank blob
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183922250723940216, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: upgrades.Array.data[4].damage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183922250723940216, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: upgrades.Array.data[4].health
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183922250723940216, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: upgrades.Array.data[4].nadpis
+      value: Hit&Run blob
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183922250723940216, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: upgrades.Array.data[5].health
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183922250723940216, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: upgrades.Array.data[5].nadpis
+      value: Warrior blob
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183922250723940216, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: upgrades.Array.data[6].damage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183922250723940216, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: upgrades.Array.data[6].health
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183922250723940216, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: upgrades.Array.data[6].nadpis
+      value: Faster blob
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183922250723940216, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: upgrades.Array.data[6].attSpeed
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183922250723940216, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: super_upgrades.Array.data[0].image
+      value: 
+      objectReference: {fileID: -3309222640135144339, guid: da1646f96b2da68419234afc326f0c6b, type: 3}
+    - target: {fileID: 4183922250723940216, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: super_upgrades.Array.data[0].popis
+      value: Slowly regenerates health
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183922250723940216, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: super_upgrades.Array.data[0].regen
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183922250723940216, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: super_upgrades.Array.data[1].popis
+      value: slowly spits automaticaly
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183922250723940216, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: super_upgrades.Array.data[0].nadpis
+      value: Healthy blob
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183922250723940216, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: super_upgrades.Array.data[1].nadpis
+      value: Militaristic blob
       objectReference: {fileID: 0}
     - target: {fileID: 5063671938539977211, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -15448,4 +15511,3 @@ SceneRoots:
   - {fileID: 294128288}
   - {fileID: 1110301808}
   - {fileID: 812739439873320729}
-  - {fileID: 212300457}

@@ -331,8 +331,12 @@ MonoBehaviour:
   Player: {fileID: 4183922250723940216}
   spitsound: {fileID: 0}
   clocker: 0
+  clocker2: 0
   attackSpeed: 1
+  attackSpeed2: 0
   attackProgress: 0
+  attackProgress2: 0
+  semiAuto: 0
 --- !u!1 &750259025049345723
 GameObject:
   m_ObjectHideFlags: 0
@@ -1724,14 +1728,6 @@ MonoBehaviour:
     health: 0
     regen: 0
     attSpeed: 0
-  - nadpis: Healthy blob
-    popis: Slowly regenerates health
-    image: {fileID: -3309222640135144339, guid: da1646f96b2da68419234afc326f0c6b, type: 3}
-    damage: 0
-    speed: 0
-    health: 0
-    regen: 0.5
-    attSpeed: 0
   - nadpis: Speedy Tank blob
     popis: Slight increase in speed and max health
     image: {fileID: 1098808687311315933, guid: d64a04d69e27dc34f8e52d10a1451402, type: 3}
@@ -1765,22 +1761,24 @@ MonoBehaviour:
     regen: 0
     attSpeed: 0.2
   super_upgrades:
-  - nadpis: bohoo 1
-    popis: 
-    image: {fileID: -3135200691326019687, guid: becb8edac45c9374b88859e5be5dc532, type: 3}
+  - nadpis: Healthy blob
+    popis: Slowly regenerates health
+    image: {fileID: -3309222640135144339, guid: da1646f96b2da68419234afc326f0c6b, type: 3}
+    damage: 0
+    speed: 0
+    health: 0
+    regen: 0.7
+    attSpeed: 0
+    semiAuto: 0
+  - nadpis: Militaristic blob
+    popis: Sometimes spits automaticaly
+    image: {fileID: 2175247460903423007, guid: ce443fbe5e18c79499d9a3b3b404e873, type: 3}
     damage: 0
     speed: 0
     health: 0
     regen: 0
     attSpeed: 0
-  - nadpis: boohoo 2
-    popis: 
-    image: {fileID: -3135200691326019687, guid: becb8edac45c9374b88859e5be5dc532, type: 3}
-    damage: 0
-    speed: 0
-    health: 0
-    regen: 0
-    attSpeed: 0
+    semiAuto: 1
   isSuperUpgrade: 0
   killCount: 0
   choiceTop: 3
