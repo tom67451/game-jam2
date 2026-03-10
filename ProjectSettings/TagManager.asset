@@ -9,6 +9,7 @@ TagManager:
   - Switcher
   - Spawner
   - Fader
+  - Loading
   layers:
   - Default
   - TransparentFX

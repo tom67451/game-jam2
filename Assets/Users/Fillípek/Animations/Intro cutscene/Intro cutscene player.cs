@@ -19,7 +19,7 @@ public class IntroCutscenePlayer : MonoBehaviour
 
     public Animator animator;
     public GameObject Dialogue_box;
-    [SerializeField] private Switcher Switcher;
+    public Switcher Switcher;
 
     public int line_count;
 
@@ -31,6 +31,7 @@ public class IntroCutscenePlayer : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        Switcher = GameObject.FindGameObjectWithTag("Switcher").GetComponent<Switcher>();
         
         textComponent.text = string.Empty;
         UpdatePortrait();

@@ -135,71 +135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06ba20daa7e534b469546fd29dae907b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
---- !u!1001 &182528674
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3681227861636690937, guid: 728be3d5239002a40a7a9ecb0243de88, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.32193446
-      objectReference: {fileID: 0}
-    - target: {fileID: 3681227861636690937, guid: 728be3d5239002a40a7a9ecb0243de88, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.0724651
-      objectReference: {fileID: 0}
-    - target: {fileID: 3681227861636690937, guid: 728be3d5239002a40a7a9ecb0243de88, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3681227861636690937, guid: 728be3d5239002a40a7a9ecb0243de88, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3681227861636690937, guid: 728be3d5239002a40a7a9ecb0243de88, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3681227861636690937, guid: 728be3d5239002a40a7a9ecb0243de88, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3681227861636690937, guid: 728be3d5239002a40a7a9ecb0243de88, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3681227861636690937, guid: 728be3d5239002a40a7a9ecb0243de88, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3681227861636690937, guid: 728be3d5239002a40a7a9ecb0243de88, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3681227861636690937, guid: 728be3d5239002a40a7a9ecb0243de88, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5066003093102388100, guid: 728be3d5239002a40a7a9ecb0243de88, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5066003093102388100, guid: 728be3d5239002a40a7a9ecb0243de88, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9131455015603964905, guid: 728be3d5239002a40a7a9ecb0243de88, type: 3}
-      propertyPath: m_Name
-      value: Shrooms thing base
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 728be3d5239002a40a7a9ecb0243de88, type: 3}
 --- !u!1 &203766778
 GameObject:
   m_ObjectHideFlags: 0
@@ -5743,6 +5678,10 @@ PrefabInstance:
     - target: {fileID: 3507592974928193190, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
       propertyPath: m_Name
       value: Player V5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507592974928193190, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3995794264053123675, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
       propertyPath: m_AnchorMax.y
@@ -15588,4 +15527,3 @@ SceneRoots:
   - {fileID: 294128288}
   - {fileID: 1110301808}
   - {fileID: 812739439873320729}
-  - {fileID: 182528674}
