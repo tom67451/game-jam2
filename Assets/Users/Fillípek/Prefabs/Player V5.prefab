@@ -1764,7 +1764,23 @@ MonoBehaviour:
     health: 0
     regen: 0
     attSpeed: 0.2
-  super_upgrades: []
+  super_upgrades:
+  - nadpis: bohoo 1
+    popis: 
+    image: {fileID: -3135200691326019687, guid: becb8edac45c9374b88859e5be5dc532, type: 3}
+    damage: 0
+    speed: 0
+    health: 0
+    regen: 0
+    attSpeed: 0
+  - nadpis: boohoo 2
+    popis: 
+    image: {fileID: -3135200691326019687, guid: becb8edac45c9374b88859e5be5dc532, type: 3}
+    damage: 0
+    speed: 0
+    health: 0
+    regen: 0
+    attSpeed: 0
   isSuperUpgrade: 0
   killCount: 0
   choiceTop: 3

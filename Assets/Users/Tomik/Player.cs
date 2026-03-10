@@ -150,6 +150,7 @@ public class Player : MonoBehaviour
         #region Normal upgrades logic
         if ((xp >= xpToNextLevel && (level + 1) % 3 != 0) || (xp >= xpToNextLevel && level == 0))
         {
+            Debug.Log("Rolling normal upgrades");
             isSuperUpgrade = false;
             lvlUI.SetActive(true);
             PauseGame();
@@ -170,6 +171,7 @@ public class Player : MonoBehaviour
         #region Super upgrades logic
         else if (xp >= xpToNextLevel && ((level + 1) % 3 == 0 && level != 0))
         {
+            Debug.Log("Rolling super upgrades");
             isSuperUpgrade = true;
             lvlUI.SetActive(true);
             PauseGame();
@@ -190,6 +192,7 @@ public class Player : MonoBehaviour
         #region Upgrades options writing
         if (isSuperUpgrade == true)
         {
+            Debug.Log("Writing super upgrades");
             Option1Name.text = upgrades[rng3].nadpis;
             Option1Text.text = upgrades[rng3].popis;
             Option1Image.sprite = upgrades[rng3].image;
@@ -198,8 +201,9 @@ public class Player : MonoBehaviour
             Option2Text.text = upgrades[rng4].popis;
             Option2Image.sprite = upgrades[rng4].image;
         }
-        else
+        else if (isSuperUpgrade == false)
         {
+            Debug.Log("Writing normal upgrades");
             Option1Name.text = upgrades[rng].nadpis;
             Option1Text.text = upgrades[rng].popis;
             Option1Image.sprite = upgrades[rng].image;
