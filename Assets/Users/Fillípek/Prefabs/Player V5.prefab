@@ -1764,6 +1764,7 @@ MonoBehaviour:
     health: 0
     regen: 0
     attSpeed: 0.2
+  super_upgrades: []
   isSuperUpgrade: 0
   killCount: 0
   choiceTop: 3

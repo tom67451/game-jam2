@@ -20,6 +20,7 @@ public class Upgrades
     public float attSpeed;
 }
 
+[System.Serializable]
 public class Super_Upgrades
 {
     public string nadpis;
