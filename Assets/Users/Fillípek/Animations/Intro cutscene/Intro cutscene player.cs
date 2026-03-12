@@ -30,13 +30,13 @@ public class IntroCutscenePlayer : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         Switcher = GameObject.FindGameObjectWithTag("Switcher").GetComponent<Switcher>();
         
         textComponent.text = string.Empty;
         UpdatePortrait();
         StartDialogue();
 
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
     void Update()
     {
