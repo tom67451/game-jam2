@@ -77,11 +77,16 @@ public class Player : MonoBehaviour
     [Header ("Upgrades")]
     public Upgrades[] upgrades;
 
+    public Sprite importantChoiceImage1;
+    public Sprite importantChoiceImage2;
+
     [Header ("Super upgrades")]
     public Super_Upgrades[] super_upgrades;
     public bool isSuperUpgrade = false;
 
-    [Header ("Misc")]
+    [Header("Misc")]
+    public bool badEnd;
+    public bool nerf;
     public int killCount = 0;
     private bool isPaused;
     private int rng;
@@ -148,8 +153,23 @@ public class Player : MonoBehaviour
         }
         #endregion
 
+
         #region Normal upgrades logic
-        if ((xp >= xpToNextLevel && (level + 1) % 3 != 0) || (xp >= xpToNextLevel && level == 0))
+        if (xp >= xpToNextLevel && level == 4)
+        {
+            Debug.Log("Deciding upgrade is active");
+            lvlUI.SetActive(true);
+            PauseGame();
+
+            rng3 = 100;
+            rng4 = 110;
+
+            xp -= xpToNextLevel;
+            level++;
+            xpToNextLevel = xpToNextLevel * xpGrowthRate;
+            totalxp += xp;
+        }
+        else if ((xp >= xpToNextLevel && (level + 1) % 3 != 0) && level != 4 || (xp >= xpToNextLevel && level == 0))
         {
             Debug.Log("Rolling normal upgrades");
             isSuperUpgrade = false;
@@ -170,7 +190,7 @@ public class Player : MonoBehaviour
         #endregion
 
         #region Super upgrades logic
-        else if (xp >= xpToNextLevel && ((level + 1) % 3 == 0 && level != 0))
+        else if (xp >= xpToNextLevel && ((level + 1) % 3 == 0 && level != 0 && level != 4))
         {
             Debug.Log("Rolling super upgrades");
             isSuperUpgrade = true;
@@ -202,7 +222,7 @@ public class Player : MonoBehaviour
             Option2Text.text = super_upgrades[rng4].popis;
             Option2Image.sprite = super_upgrades[rng4].image;
         }
-        else if (isSuperUpgrade == false)
+        else if (isSuperUpgrade == false && rng3 != 100 && rng4 != 110)
         {
             Debug.Log("Writing normal upgrades");
             Option1Name.text = upgrades[rng].nadpis;
@@ -213,7 +233,17 @@ public class Player : MonoBehaviour
             Option2Text.text = upgrades[rng2].popis;
             Option2Image.sprite = upgrades[rng2].image;
         }
-        
+        else if (rng3 == 100 && rng4 == 110)
+        {
+            Debug.Log("Writing decision upgrades");
+            Option1Name.text = "Anti-shadow blob";
+            Option1Text.text = "Protects you from cold, thus decreasesing damage received from dark shadow slimes";
+            Option1Image.sprite = importantChoiceImage1;
+
+            Option2Name.text = "Anti-heat blob";
+            Option2Text.text = "Protects you from heat, thus decreasing damage received from magma slimes";
+            Option2Image.sprite = importantChoiceImage2;
+        }
         #endregion
     }
 
@@ -242,6 +272,10 @@ public class Player : MonoBehaviour
             attackSpeed += super_upgrades[rng3].attSpeed;
             Shoot.semiAuto = super_upgrades[rng3].semiAuto;
         }
+        else if (rng3 == 100 && rng4 == 110)
+        {
+            badEnd = true;
+        }
         else
         {
             Shoot.damage += upgrades[rng].damage;
@@ -264,6 +298,10 @@ public class Player : MonoBehaviour
             regenerationRate += super_upgrades[rng4].regen;
             attackSpeed += super_upgrades[rng4].attSpeed;
             Shoot.semiAuto = super_upgrades[rng4].semiAuto;
+        }
+        else if (rng3 == 100 && rng4 == 110)
+        {
+            badEnd = false;
         }
         else
         {

@@ -17,12 +17,16 @@ public class Enemy : MonoBehaviour
     public float hp;
     public float maxHp;
     public float damage = 10f;
+    public bool isMagma;
+    public bool isShadow;
 
     public GameObject xp_orb;
     public GameObject playerObj;
     public EnemySpawningScript spawner;
     public HealthBar healthBar;
-    void Awake() {
+
+    void Awake() 
+    {
         maxHp = hp;
     }
 
@@ -35,12 +39,21 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && other.GetComponent<Player>().nerf == false)
         {
             Debug.Log("Enemy hit!");
             player.hp -= damage;
         }
-        
+        else if (other.CompareTag("Player") && (isMagma ||  isShadow) && other.GetComponent<Player>().nerf == true && other.GetComponent<Player>().badEnd == true)
+        {
+            Debug.Log("Nerfed shadow enemy hit!");
+            player.hp -= (damage - 5);
+        }
+        else if (other.CompareTag("Player") && (isMagma || isShadow) && other.GetComponent<Player>().nerf == true && other.GetComponent<Player>().badEnd == false)
+        {
+            Debug.Log("Nerfed shadow enemy hit!");
+            player.hp -= (damage - 5);
+        }
     }
 
     private void Update()

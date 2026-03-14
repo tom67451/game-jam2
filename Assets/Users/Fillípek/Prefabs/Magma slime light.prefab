@@ -554,6 +554,8 @@ MonoBehaviour:
   hp: 45
   maxHp: 0
   damage: 7
+  isMagma: 1
+  isShadow: 0
   xp_orb: {fileID: 4002872362095769937, guid: c2b1cd3bceb35db48a2b930630d435c1, type: 3}
   playerObj: {fileID: 0}
   spawner: {fileID: 0}
