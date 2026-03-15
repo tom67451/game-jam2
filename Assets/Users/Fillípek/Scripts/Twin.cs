@@ -23,13 +23,12 @@ public class Twin : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         playerObj = GameObject.FindGameObjectWithTag("Player");
 
-        hp = player.hp;
         maxHp = player.maxHp;
         //damage = Shoot.damage;
         regen = player.regenerationRate;
         attSpeed = player.attackSpeed;
         
-        maxHp = hp;
+        hp = maxHp;
     }
 
     /*private void OnTriggerEnter2D(Collider2D other)
@@ -55,13 +54,12 @@ public class Twin : MonoBehaviour
         }
         #endregion
 
-        /*if (hp <= 0f)
+        if (hp <= 0f)
         {
             player.killCount++;
             Instantiate(xp_orb, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y), Quaternion.identity);
             Destroy(gameObject);
         }
-        */
     }
 
     void OnDestroy()
