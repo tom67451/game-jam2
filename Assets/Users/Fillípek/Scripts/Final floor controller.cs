@@ -1,6 +1,8 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using UnityEngine.InputSystem.Composites;
 using UnityEngine.UI;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 
 public class FinalFloorController : MonoBehaviour
@@ -16,7 +18,6 @@ public class FinalFloorController : MonoBehaviour
     private bool isTyping = false;
 
 
-    public Animator animator;
     public GameObject Dialogue_box;
     [SerializeField] private Switcher Switcher;
     
@@ -25,8 +26,27 @@ public class FinalFloorController : MonoBehaviour
     public float clocker;
     public bool clockbool;
 
+    public Player Player;
+    public Twin Twin;
+    public GameObject player;
+    public GameObject twin;
+    public GameObject aplayer;
+    public GameObject atwin;
+    public GameObject camera;
+    public float speedCache;
+
     void Start()
     {
+        Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();         //Cannot find player again
+        Twin = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Twin>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        twin = GameObject.FindGameObjectWithTag("Enemy");
+
+        player.transform.position = aplayer.transform.position;
+        twin.SetActive(false);
+        player.SetActive(false);
+        speedCache = Player.movementSpeed;
+        Player.movementSpeed = 0;
 
         textComponent.text = string.Empty;
         UpdatePortrait();
@@ -38,6 +58,16 @@ public class FinalFloorController : MonoBehaviour
         if (clockbool)
         {
             clocker += Time.deltaTime;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && line_count == 12 || Input.GetMouseButtonDown(0) && line_count == 12 || Input.GetKeyDown(KeyCode.KeypadEnter) && line_count == 12)
+        {
+            twin.SetActive(true);
+            player.SetActive(true);
+            Player.movementSpeed = speedCache;
+            Destroy(atwin);
+            Destroy(aplayer);
+            Destroy(camera);
         }
 
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.KeypadEnter))
@@ -67,7 +97,7 @@ public class FinalFloorController : MonoBehaviour
         isTyping = false;
     }
 
-    System.Collections.IEnumerator PlayAndWait(string anim)
+    /*System.Collections.IEnumerator PlayAndWait(string anim)
     {
         animator.Play(anim);
 
@@ -75,6 +105,7 @@ public class FinalFloorController : MonoBehaviour
 
         Debug.Log("Konec animace");
     }
+    */
 
 
 
