@@ -122,17 +122,6 @@ public class FinalCutscenePlayer : MonoBehaviour
         isTyping = false;
     }
 
-    System.Collections.IEnumerator PlayAndWait(string anim)
-    {
-        animator.Play(anim);
-
-        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
-
-        Debug.Log("Konec animace");
-    }
-
-
-
     public void NextLine()
     {
         if (isTyping)

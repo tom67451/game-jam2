@@ -1,6 +1,4 @@
-using System.Net.Http.Headers;
 using TMPro;
-using Unity.Play.Publisher.Editor;
 using Unity.VectorGraphics;
 using UnityEngine;
 using UnityEngine.Rendering;
