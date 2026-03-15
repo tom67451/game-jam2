@@ -6,7 +6,7 @@ public class Twin : MonoBehaviour
     public Player player;
 
     [Header("Twin stats")]
-    public float hp;
+    public float hp = 100f;
     public float maxHp;
     public float damage = 10f;
     public float regen;
@@ -55,11 +55,17 @@ public class Twin : MonoBehaviour
         }
         #endregion
 
-        if (hp <= 0f)
+        /*if (hp <= 0f)
         {
             player.killCount++;
             Instantiate(xp_orb, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y), Quaternion.identity);
             Destroy(gameObject);
         }
+        */
+    }
+
+    void OnDestroy()
+    {
+        Debug.Log("Twin destroyed");
     }
 }
