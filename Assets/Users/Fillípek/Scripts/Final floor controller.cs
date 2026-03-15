@@ -15,7 +15,6 @@ public class FinalFloorController : MonoBehaviour
     private int index;
     private bool isTyping = false;
 
-    private bool started = false;
 
     public Animator animator;
     public GameObject Dialogue_box;
@@ -25,8 +24,6 @@ public class FinalFloorController : MonoBehaviour
 
     public float clocker;
     public bool clockbool;
-
-    public bool skipper = false;
 
     void Start()
     {
@@ -43,49 +40,10 @@ public class FinalFloorController : MonoBehaviour
             clocker += Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && started == false || Input.GetMouseButtonDown(0) && started == false || Input.GetKeyDown(KeyCode.KeypadEnter) && started == false)
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.KeypadEnter))
         {
             NextLine();
             Debug.Log(line_count);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space) && line_count == 4 && started == true && clockbool == false || Input.GetMouseButtonDown(0) && line_count == 4 && started == true && clockbool == false || Input.GetKeyDown(KeyCode.KeypadEnter) && line_count == 4 && started == true && clockbool == false)
-        {
-            NextLine();
-            Dialogue_box.SetActive(false);
-            clockbool = true;
-            Debug.Log(line_count + "!");
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space) && line_count == 7 || Input.GetMouseButtonDown(0) && line_count == 7 || Input.GetKeyDown(KeyCode.KeypadEnter) && line_count == 7)
-        {
-            
-            Debug.Log(line_count + "?");
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space) && line_count == 9 || Input.GetMouseButtonDown(0) && line_count == 9 || Input.GetKeyDown(KeyCode.KeypadEnter) && line_count == 9)
-        {
-            Switcher.SwitchToScene("MainMenu");
-            Debug.Log("Returning to main menu");
-        }
-
-        if (line_count == 4 && started == false && skipper == false)
-        {
-            animator.SetBool("Start", true);
-            Debug.Log("Line count is 4");
-            started = true;
-        }
-
-        if (clocker >= 10)
-        {
-            Dialogue_box.SetActive(true);
-            animator.SetBool("Continue", true);
-            animator.SetBool("Start", false);
-            Debug.Log("Time's up!");
-            started = false;
-            clocker = 0;
-            clockbool = false;
-            skipper = true;
         }
     }
 

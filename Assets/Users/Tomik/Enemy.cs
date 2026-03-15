@@ -58,8 +58,6 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {   
-        
-        
         healthBar.SetHealth(hp, maxHp);
         
         

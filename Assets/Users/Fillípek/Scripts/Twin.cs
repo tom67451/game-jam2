@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class Twin : MonoBehaviour
 {
@@ -15,8 +16,15 @@ public class Twin : MonoBehaviour
     public GameObject xp_orb;
     public GameObject playerObj;
     public HealthBar healthBar;
+    [SerializeField] GameObject shootBar;
+    [SerializeField] TwinShoot Shoot;
 
     public float clocker;
+
+    private Vector2 movement;
+    public Animator animator;
+    private const string horizontal = "Horizontal";
+    private const string vertical = "Vertical";
 
     void Start()
     {
@@ -43,8 +51,19 @@ public class Twin : MonoBehaviour
 
     private void Update()
     {
+        #region Animations
+        movement.Set(Inputmanager.Movement.x, Inputmanager.Movement.y);
+
+        animator.SetFloat(horizontal, movement.x);
+        animator.SetFloat(vertical, movement.y);
+        #endregion
+
         clocker += Time.deltaTime;
         healthBar.SetHealth(hp, maxHp);
+
+        #region Shootbar logic
+        shootBar.transform.localScale = new Vector3(Shoot.attackProgress * 5, 0.05f, 0);
+        #endregion
 
         #region Regen logic
         if (clocker >= 1 && hp < maxHp)

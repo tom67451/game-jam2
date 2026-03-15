@@ -17,9 +17,5 @@ public class UpdateUI : MonoBehaviour
         healthSlider.value = player.hp / player.maxHp;
         levelText.text = "Level: " + player.level.ToString();
         killCountText.text = "Kills: " + player.killCount.ToString();
-
-
-
     }
-
 }

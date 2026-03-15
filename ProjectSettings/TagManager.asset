@@ -10,6 +10,7 @@ TagManager:
   - Spawner
   - Fader
   - Loading
+  - Twin bullet
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Bullet
   - Enemy
   - Orb
-  - 
+  - Twin bullet
   - 
   - 
   - 
