@@ -19,7 +19,6 @@ public class FinalFloorController : MonoBehaviour
 
 
     public GameObject Dialogue_box;
-    [SerializeField] private Switcher Switcher;
     
     public int line_count;
 
@@ -38,9 +37,7 @@ public class FinalFloorController : MonoBehaviour
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();         //Cannot find player again
-        Twin = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Twin>();
         player = GameObject.FindGameObjectWithTag("Player");
-        twin = GameObject.FindGameObjectWithTag("Enemy");
 
         player.transform.position = aplayer.transform.position;
         twin.SetActive(false);

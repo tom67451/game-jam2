@@ -683,6 +683,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3328379246644930061, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 517417487531997274, guid: fe171fae724bc214f8909511c9c07947, type: 2}
+    - target: {fileID: 3328379246644930061, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3507592974928193190, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
       propertyPath: m_Name
       value: Player V5
@@ -691,6 +699,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3995794264053123675, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965000907538769048, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 517417487531997274, guid: fe171fae724bc214f8909511c9c07947, type: 2}
+    - target: {fileID: 4965000907538769048, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5063671938539977211, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -698,6 +718,10 @@ PrefabInstance:
     - target: {fileID: 5063671938539977211, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8055730060471701732, guid: 7ec24c837ce8907449dbd80b279d4f1e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18572,7 +18596,6 @@ MonoBehaviour:
   - Because we are the same..
   - I am you and you are me.
   Dialogue_box: {fileID: 1904563795}
-  Switcher: {fileID: 0}
   line_count: 0
   clocker: 0
   clockbool: 0
