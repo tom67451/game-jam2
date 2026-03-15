@@ -623,9 +623,9 @@ MonoBehaviour:
   m_ComponentVersion: 2
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.87
-  m_Color: {r: 1, g: 0, b: 0.041268826, a: 1}
-  m_Intensity: 5
+  m_FalloffIntensity: 0.692
+  m_Color: {r: 0.7176471, g: 0.3764706, b: 0.38039216, a: 1}
+  m_Intensity: 3
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000c1e46287
@@ -677,14 +677,15 @@ MonoBehaviour:
   maxHp: 100
   damage: 10
   regen: 0
-  attSpeed: 0
-  xp_orb: {fileID: 4002872362095769937, guid: 8bedba17253fb6f4fbdd3b6a6e439d74, type: 3}
+  attSpeed: 0.5
+  xp_orb: {fileID: 4002872362095769937, guid: a86332efc047ced4e8173041765095f4, type: 3}
   playerObj: {fileID: 0}
   healthBar: {fileID: 4033888299650835352}
   shootBar: {fileID: 2558486633814988305}
   Shoot: {fileID: 4005444873932691324}
   clocker: 0
   animator: {fileID: 4890388437602375659}
+  spawner: {fileID: 0}
 --- !u!114 &6037166788779339033
 MonoBehaviour:
   m_ObjectHideFlags: 0

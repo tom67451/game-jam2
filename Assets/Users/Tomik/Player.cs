@@ -1,5 +1,6 @@
 using System.Net.Http.Headers;
 using TMPro;
+using Unity.Play.Publisher.Editor;
 using Unity.VectorGraphics;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -32,6 +33,8 @@ public class Super_Upgrades
     public float regen;
     public float attSpeed;
     public bool semiAuto;
+    public bool lumiShots;
+    public bool megaShot;
 }
 
 public class Player : MonoBehaviour
@@ -64,6 +67,8 @@ public class Player : MonoBehaviour
 
     [Header("UI Bindings")]
     public GameObject lvlUI;
+    public Animator skillAnimator;
+    public Button ConfirmButtom;
     public Button Option1;
     public TextMeshProUGUI Option1Name;
     public TextMeshProUGUI Option1Text;
@@ -97,6 +102,7 @@ public class Player : MonoBehaviour
     public int superChoiceTop = 1;
     public Shoot Shoot;
     public Switcher switcher;
+    public bool isIlum = false;
 
     [Header("Death stuff")]
     [SerializeField] GameObject deathUi;
@@ -107,6 +113,9 @@ public class Player : MonoBehaviour
     private float lightClock;
 
     public float clocker;
+
+    public bool isChoice1;
+    public bool isChoice2;
 
 
     private void Start()
@@ -159,6 +168,7 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Deciding upgrade is active");
             lvlUI.SetActive(true);
+            //skillAnimator.SetTrigger("Pop");
             PauseGame();
 
             rng3 = 100;
@@ -174,6 +184,7 @@ public class Player : MonoBehaviour
             Debug.Log("Rolling normal upgrades");
             isSuperUpgrade = false;
             lvlUI.SetActive(true);
+            //skillAnimator.SetTrigger("Pop");
             PauseGame();
 
             rng = Random.Range(0, choiceTop);
@@ -195,6 +206,7 @@ public class Player : MonoBehaviour
             Debug.Log("Rolling super upgrades");
             isSuperUpgrade = true;
             lvlUI.SetActive(true);
+            //skillAnimator.SetTrigger("Pop");
             PauseGame();
 
             rng3 = Random.Range(0, superChoiceTop);
@@ -213,7 +225,7 @@ public class Player : MonoBehaviour
         #region Upgrades options writing
         if (isSuperUpgrade == true)
         {
-            Debug.Log("Writing super upgrades");
+            //Debug.Log("Writing super upgrades");
             Option1Name.text = super_upgrades[rng3].nadpis;
             Option1Text.text = super_upgrades[rng3].popis;
             Option1Image.sprite = super_upgrades[rng3].image;
@@ -224,7 +236,7 @@ public class Player : MonoBehaviour
         }
         else if (isSuperUpgrade == false && rng3 != 100 && rng4 != 110)
         {
-            Debug.Log("Writing normal upgrades");
+            //Debug.Log("Writing normal upgrades");
             Option1Name.text = upgrades[rng].nadpis;
             Option1Text.text = upgrades[rng].popis;
             Option1Image.sprite = upgrades[rng].image;
@@ -235,7 +247,7 @@ public class Player : MonoBehaviour
         }
         else if (rng3 == 100 && rng4 == 110)
         {
-            Debug.Log("Writing decision upgrades");
+            //Debug.Log("Writing decision upgrades");
             Option1Name.text = "Anti-shadow blob";
             Option1Text.text = "Protects you from cold, thus decreasesing damage received from dark shadow slimes";
             Option1Image.sprite = importantChoiceImage1;
@@ -263,55 +275,119 @@ public class Player : MonoBehaviour
 
     public void Option1Click()
     {
-        if (isSuperUpgrade)
-        {
-            Shoot.damage += super_upgrades[rng3].damage;
-            maxHp += super_upgrades[rng3].health;
-            movementSpeed += super_upgrades[rng3].speed;
-            regenerationRate += super_upgrades[rng3].regen;
-            attackSpeed += super_upgrades[rng3].attSpeed;
-            Shoot.semiAuto = super_upgrades[rng3].semiAuto;
-        }
-        else if (rng3 == 100 && rng4 == 110)
-        {
-            badEnd = true;
-        }
-        else
-        {
-            Shoot.damage += upgrades[rng].damage;
-            maxHp += upgrades[rng].health;
-            movementSpeed += upgrades[rng].speed;
-            regenerationRate += upgrades[rng].regen;
-            attackSpeed += upgrades[rng].attSpeed;
-        }
-        lvlUI.SetActive(false);
-        ResumeGame();
+        ColorBlock Farbpalette = Option1.colors;
+        // Resettet die Farben wieder...
+        Farbpalette.selectedColor = new Color(1, 0.6f, 1);
+        Farbpalette.highlightedColor = new Color(1f, 1f, 1);
+        Farbpalette.normalColor = new Color(1, 0.6f, 1);
+        Option1.colors = Farbpalette;
+
+        ColorBlock Farbpalette2 = Option2.colors;
+        // Resettet die Farben wieder...
+        Farbpalette2.selectedColor = new Color(1, 1, 1);
+        Farbpalette2.highlightedColor = new Color(1f, 1f, 1);
+        Farbpalette2.normalColor = new Color(1, 1f, 1);
+        Option2.colors = Farbpalette2;
+
+        isChoice1 = true;
+        isChoice2 = false;
     }
 
     public void Option2Click()
     {
-        if (isSuperUpgrade == true)
+        ColorBlock Farbpalette = Option2.colors;
+        Farbpalette.selectedColor = new Color(1, 0.6f, 1);
+        Farbpalette.highlightedColor = new Color(1f, 1f, 1);
+        Farbpalette.normalColor = new Color(1, 0.6f, 1);
+        Option2.colors = Farbpalette;
+
+        ColorBlock Farbpalette2 = Option1.colors;
+        Farbpalette2.selectedColor = new Color(1, 1, 1);
+        Farbpalette2.highlightedColor = new Color(1f, 1f, 1);
+        Farbpalette2.normalColor = new Color(1, 1f, 1);
+        Option1.colors = Farbpalette2;
+
+        isChoice1 = false;
+        isChoice2 = true;
+    }
+
+    public void ConfirmClick()
+    {
+        if (isChoice1 == true)
         {
-            Shoot.damage += super_upgrades[rng4].damage;
-            maxHp += super_upgrades[rng4].health;
-            movementSpeed += super_upgrades[rng4].speed;
-            regenerationRate += super_upgrades[rng4].regen;
-            attackSpeed += super_upgrades[rng4].attSpeed;
-            Shoot.semiAuto = super_upgrades[rng4].semiAuto;
+            if (isSuperUpgrade)
+            {
+                Shoot.damage += super_upgrades[rng3].damage;
+                maxHp += super_upgrades[rng3].health;
+                movementSpeed += super_upgrades[rng3].speed;
+                regenerationRate += super_upgrades[rng3].regen;
+                attackSpeed += super_upgrades[rng3].attSpeed;
+                if (!Shoot.semiAuto)
+                {
+                    Shoot.semiAuto = super_upgrades[rng3].semiAuto;
+                }
+                if (!isIlum)
+                {
+                    isIlum = super_upgrades[rng3].lumiShots;
+                }
+                
+            }
+            else if (rng3 == 100 && rng4 == 110)
+            {
+                badEnd = true;
+            }
+            else
+            {
+                Shoot.damage += upgrades[rng].damage;
+                maxHp += upgrades[rng].health;
+                movementSpeed += upgrades[rng].speed;
+                regenerationRate += upgrades[rng].regen;
+                attackSpeed += upgrades[rng].attSpeed;
+            }
+            isChoice1 = false;
+            isChoice2 = false;
         }
-        else if (rng3 == 100 && rng4 == 110)
+        else if (isChoice2 == true)
         {
-            badEnd = false;
+            if (isSuperUpgrade == true)
+            {
+                Shoot.damage += super_upgrades[rng4].damage;
+                maxHp += super_upgrades[rng4].health;
+                movementSpeed += super_upgrades[rng4].speed;
+                regenerationRate += super_upgrades[rng4].regen;
+                attackSpeed += super_upgrades[rng4].attSpeed;
+                if (!Shoot.semiAuto)
+                {
+                    Shoot.semiAuto = super_upgrades[rng4].semiAuto;
+                }
+                if (!isIlum)
+                {
+                    isIlum = super_upgrades[rng4].lumiShots;
+                }
+                
+            }
+            else if (rng3 == 100 && rng4 == 110)
+            {
+                badEnd = false;
+            }
+            else
+            {
+                Shoot.damage += upgrades[rng2].damage;
+                maxHp += upgrades[rng2].health;
+                movementSpeed += upgrades[rng2].speed;
+                regenerationRate += upgrades[rng2].regen;
+                attackSpeed += upgrades[rng2].attSpeed;
+            }
+            isChoice1 = false;
+            isChoice2 = false;
         }
-        else
+        else if (isChoice1 == false && isChoice2 == false)
         {
-            Shoot.damage += upgrades[rng2].damage;
-            maxHp += upgrades[rng2].health;
-            movementSpeed += upgrades[rng2].speed;
-            regenerationRate += upgrades[rng2].regen;
-            attackSpeed += upgrades[rng2].attSpeed; 
+            return;
         }
+
         lvlUI.SetActive(false);
+        //skillAnimator.SetTrigger("Unpop");
         ResumeGame();
     }
 
@@ -332,6 +408,8 @@ public class Player : MonoBehaviour
         movementSpeed = 0f;
         deathUi.SetActive(true);
         spawner.SetActive(false);
+
+        killCount = 0;
 
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 

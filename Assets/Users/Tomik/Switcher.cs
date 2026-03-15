@@ -56,10 +56,10 @@ public class Switcher : MonoBehaviour
 
     void Update() 
     {
-        /*if (Input.GetKeyDown(KeyCode.L)) {
+        if (Input.GetKeyDown(KeyCode.L)) {
             SwitchToFloor(currentFloorIndex + 1);
         }
-        */
+        
 
         if (clockClocker)
         {
@@ -89,16 +89,21 @@ public class Switcher : MonoBehaviour
             fadeClocker = true;
         }
 
-        if (Application.CanStreamedLevelBeLoaded(sceneName) && newFloorIndex != 6) 
+        if (Application.CanStreamedLevelBeLoaded(sceneName) && newFloorIndex != 8) 
         {
             currentFloorIndex = newFloorIndex;
             SceneManager.LoadScene(sceneName);
-        } 
-        else 
+        }
+        else if (newFloorIndex == 8)
+        {
+            SceneManager.LoadScene("Final cutscene");
+        }
+        else
         {
             Debug.LogError("Add " + sceneName + " to Build Settings!");
         }
     }
+
     public void SwitchToScene(string sceneName)
     {
         StartCoroutine(LoadScene(sceneName));

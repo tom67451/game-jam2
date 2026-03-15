@@ -29,8 +29,13 @@ public class FinalCutscenePlayer : MonoBehaviour
 
     public bool skipper = false;
 
+    public Player Player;
+
     void Start()
     {
+        Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        Bad_ending = Player.badEnd;
+
         if (Bad_ending == true)
         {
             animator.SetBool("Bad end", true);
@@ -67,7 +72,7 @@ public class FinalCutscenePlayer : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && line_count == 7 || Input.GetMouseButtonDown(0) && line_count == 7 || Input.GetKeyDown(KeyCode.KeypadEnter) && line_count == 7)
         {
-            
+            line_count++;
             Debug.Log(line_count + "?");
         }
 

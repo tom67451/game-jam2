@@ -26,6 +26,8 @@ public class Twin : MonoBehaviour
     private const string horizontal = "Horizontal";
     private const string vertical = "Vertical";
 
+    public EnemySpawningScript spawner;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
@@ -77,6 +79,7 @@ public class Twin : MonoBehaviour
         {
             player.killCount++;
             Instantiate(xp_orb, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y), Quaternion.identity);
+            spawner.enemiesCurrentlyAlive--;
             Destroy(gameObject);
         }
     }

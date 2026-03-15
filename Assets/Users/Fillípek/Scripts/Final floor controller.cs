@@ -42,8 +42,6 @@ public class FinalFloorController : MonoBehaviour
         player.transform.position = aplayer.transform.position;
         twin.SetActive(false);
         player.SetActive(false);
-        speedCache = Player.movementSpeed;
-        Player.movementSpeed = 0;
 
         textComponent.text = string.Empty;
         UpdatePortrait();
@@ -61,10 +59,10 @@ public class FinalFloorController : MonoBehaviour
         {
             twin.SetActive(true);
             player.SetActive(true);
-            Player.movementSpeed = speedCache;
             Destroy(atwin);
             Destroy(aplayer);
             Destroy(camera);
+            Destroy(gameObject);
         }
 
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.KeypadEnter))

@@ -6,6 +6,7 @@ using UnityEngine.Rendering;
 public class Shoot : MonoBehaviour
 {
     public GameObject spit;
+    public GameObject lumSpit;
     public float speed;
     public GameObject player;
     public Player Player;
@@ -57,9 +58,20 @@ public class Shoot : MonoBehaviour
 
             Vector3 direction = (clickPos - player.transform.position).normalized;
 
-            GameObject proj = Instantiate(spit,player.transform.position,Quaternion.Euler(0, 0, angle));
+            if (Player.isIlum)
+            {
+                GameObject proj = Instantiate(lumSpit,player.transform.position,Quaternion.Euler(0, 0, angle));
 
-            proj.GetComponent<Rigidbody2D>().linearVelocity = direction * speed;
+                proj.GetComponent<Rigidbody2D>().linearVelocity = direction * speed;
+            }
+            else
+            {
+                GameObject proj = Instantiate(spit, player.transform.position, Quaternion.Euler(0, 0, angle));
+
+                proj.GetComponent<Rigidbody2D>().linearVelocity = direction * speed;
+            }
+
+            
         }
 
         if (semiAuto == true && Player.dead == false && attackProgress2 >= 1f)
@@ -76,9 +88,18 @@ public class Shoot : MonoBehaviour
 
             Vector3 direction = (clickPos - player.transform.position).normalized;
 
-            GameObject proj = Instantiate(spit, player.transform.position, Quaternion.Euler(0, 0, angle));
+            if (Player.isIlum)
+            {
+                GameObject proj = Instantiate(lumSpit, player.transform.position, Quaternion.Euler(0, 0, angle));
 
-            proj.GetComponent<Rigidbody2D>().linearVelocity = direction * speed;
+                proj.GetComponent<Rigidbody2D>().linearVelocity = direction * speed;
+            }
+            else
+            {
+                GameObject proj = Instantiate(spit, player.transform.position, Quaternion.Euler(0, 0, angle));
+
+                proj.GetComponent<Rigidbody2D>().linearVelocity = direction * speed;
+            }
         }
     }
 }
