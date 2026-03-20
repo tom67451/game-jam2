@@ -30,11 +30,15 @@ public class FinalCutscenePlayer : MonoBehaviour
     public bool skipper = false;
 
     public Player Player;
+    public GameObject player;
 
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        player = GameObject.FindGameObjectWithTag("Player");
         Bad_ending = Player.badEnd;
+
+        player.SetActive(false);
 
         if (Bad_ending == true)
         {

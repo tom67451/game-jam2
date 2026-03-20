@@ -88,15 +88,16 @@ public class Switcher : MonoBehaviour
             fadeClocker = true;
         }
 
-        if (Application.CanStreamedLevelBeLoaded(sceneName) && newFloorIndex != 8) 
+        if (newFloorIndex == 8)
+        {
+            SceneManager.LoadScene("Final cutscene");
+        }
+        else if (Application.CanStreamedLevelBeLoaded(sceneName) && newFloorIndex != 8) 
         {
             currentFloorIndex = newFloorIndex;
             SceneManager.LoadScene(sceneName);
         }
-        else if (newFloorIndex == 8)
-        {
-            SceneManager.LoadScene("Final cutscene");
-        }
+        
         else
         {
             Debug.LogError("Add " + sceneName + " to Build Settings!");

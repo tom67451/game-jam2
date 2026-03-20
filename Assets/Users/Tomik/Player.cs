@@ -17,6 +17,8 @@ public class Upgrades
     public float health;
     public float regen;
     public float attSpeed;
+    public float upgradeId;
+    public Requirements requirements;
 }
 
 [System.Serializable]
@@ -35,9 +37,17 @@ public class Super_Upgrades
     public bool megaShot;
 }
 
+[System.Serializable]
+public class Requirements
+{
+    public bool regen;
+    public bool illuminated;
+    public bool megaShot;
+}
+
 public class Player : MonoBehaviour
 {
-
+    #region Bindings
     [Header("Levels")]
     public int level = 1;
     public float xp = 0f;
@@ -114,7 +124,7 @@ public class Player : MonoBehaviour
 
     public bool isChoice1;
     public bool isChoice2;
-
+    #endregion
 
     private void Start()
     {
@@ -419,6 +429,8 @@ public class Player : MonoBehaviour
 
     public void Respawn()
     {
+        switcher = GameObject.FindGameObjectWithTag("Switcher").GetComponent<Switcher>();
+        switcher.currentFloorIndex = 0;
         dead = false;
         movementSpeed = 2f;
         deathUi.SetActive(false);
